@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# John Mnl · Portofoliu
 
-## Getting Started
+Portofoliul personal al lui Ioan Manolache (John Mnl). Next.js 16 (App Router), TypeScript, Tailwind CSS 4 și Motion. Site complet static, în română (implicit, `/`) și engleză (`/en/`).
 
-First, run the development server:
+## Pornire
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev          # http://localhost:3000
+npm run dev -- -H 0.0.0.0   # ca să-l deschizi și de pe telefon, din aceeași rețea Wi-Fi
+npm run build        # generează site-ul static în /out
+npm run lint && npm run typecheck
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Unde editezi conținutul
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tot textul stă în `/data`, iar componentele nu trebuie atinse.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Fișier | Ce conține |
+| --- | --- |
+| `data/profile.ts` | nume, rol, intro din hero, „Despre mine”, email, linkuri, poză, CV, Formspree |
+| `data/education.ts` | licența și masterul, facultatea, materiile, lucrarea de licență |
+| `data/tech.ts` | tehnologiile pe categorii (și grupa „De la facultate”) |
+| `data/projects.ts` | toate proiectele, cele recomandate (`featuredOrder`), stări, tehnologii |
+| `data/manotek.ts` | secțiunea Manotek (`isLive: true` face linkul clickabil) |
+| `data/ui.ts` | textele interfeței (meniu, butoane, titluri de secțiuni), RO + EN |
 
-## Learn More
+Cuvintele scrise între `*stele*` apar în italic serif, colorat (de ex. `"Lucruri pe care *le-am construit*"`).
 
-To learn more about Next.js, take a look at the following resources:
+**Capturi de ecran:** pui originalul (1200×750) în `assets/projects/<nume>.jpg`, rulezi `npm run images`, apoi treci `image: "<nume>"` la proiect în `data/projects.ts`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Ce mai trebuie completat
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [ ] **Email:** `data/profile.ts` → `email` (acum e `[email@exemplu.ro]`).
+- [ ] **LinkedIn:** `data/profile.ts` → `socials.linkedin`. Cât timp e placeholder, e ascuns.
+- [ ] **GitHub:** verifică dacă `https://github.com/ManolacheIoan` e linkul pe care vrei să-l arăți.
+- [ ] **Facultatea:** `data/education.ts` → `faculty` (de două ori). Verifică și anii (2022–2026, 2026–).
+- [ ] **Materii relevante și lucrarea de licență** (opțional): `courses` și `thesis` în `data/education.ts`.
+- [ ] **Tehnologii de la facultate:** `data/tech.ts` → grupa `university`. Grupa e ascunsă cât timp e goală.
+- [ ] **Poza:** pune `public/me.jpg` (portret 4:5) și scrie `photo: "/me.jpg"` în `data/profile.ts`.
+- [ ] **CV:** înlocuiește `public/cv.pdf` (acum e o pagină placeholder).
+- [ ] **Domeniul:** setează `NEXT_PUBLIC_SITE_URL` (în `netlify.toml` sau în setările Netlify/Vercel). Fără el, sitemap-ul și Open Graph folosesc `https://johnmnl.example`.
+- [ ] **Formular (opțional):** creează un formular pe formspree.io și pune ID-ul în `formspreeId`. Fără el, butonul deschide aplicația de email cu mesajul completat.
+- [ ] **Manotek.ro:** când domeniul e online, pune `isLive: true` în `data/manotek.ts`. Captura `manotek.png` e făcută din build-ul local.
+- [ ] **Disponibilitate:** textul „Deschis la colaborări” din hero e în `profile.availability` (pune `null` ca să-l ascunzi).
 
-## Deploy on Vercel
+## Publicare
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Netlify:** conectezi repo-ul. `netlify.toml` setează deja build-ul (`npm run build` → `out`) și cache-ul.
+- **Vercel:** importi proiectul. Detectează Next.js și exportul static automat.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Detalii tehnice
+
+- Două layout-uri rădăcină: `app/(ro)` și `app/(en)/en`. Pagina 404 e în `app/global-not-found.tsx`.
+- Tema e salvată în `localStorage`. `components/ThemeScript.tsx` o aplică înainte de prima afișare, deci nu există flash la încărcare.
+- Toate animațiile respectă `prefers-reduced-motion`: CSS-ul le oprește, iar Motion e configurat cu `reducedMotion="user"`.
+- Tranzițiile între pagini folosesc `<ViewTransition>` din React. Captura unui proiect „zboară” din card în pagina proiectului.
+- Paletă: prună-negru `#110c14` și galben-sulf `#e6d35c` (tema întunecată), hârtie liliachie `#f1edf1` și prună `#7a2a69` (tema luminoasă). Fonturi: Bricolage Grotesque, Instrument Serif, Geist și Geist Mono.
+- Lighthouse, la ultima verificare: desktop 98–99 la performanță și 100 la accesibilitate, bune practici și SEO. Pe mobil (4G lent simulat), performanța e ~83 din cauza celor patru fonturi web.
