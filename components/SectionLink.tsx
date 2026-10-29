@@ -10,8 +10,8 @@ const isHome = (pathname: string, lang: Lang) =>
 
 /**
  * Link to a section of the home page (#despre, #contact...).
- * On the home page it just scrolls there, without going through the router
- * (a router navigation re-renders the page mid-scroll and stutters).
+ * On the home page it just scrolls there, without going through the router and without
+ * touching the URL/history (both can make Next re-render the page mid-scroll).
  * On other pages it's a normal link to /#section.
  */
 export function SectionLink({
@@ -52,7 +52,6 @@ export function SectionLink({
       // Vertical only: left stays at 0, so the page can never slide sideways while scrolling.
       const top = target.getBoundingClientRect().top + scrollY - (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0);
       scrollTo({ top, left: 0, behavior: reduce ? "auto" : "smooth" });
-      history.replaceState(history.state, "", `#${id}`);
       // Move keyboard focus to the section without jumping.
       if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
       target.focus({ preventScroll: true });

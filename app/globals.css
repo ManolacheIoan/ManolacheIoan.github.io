@@ -322,24 +322,21 @@ body::after {
 ::view-transition {
   pointer-events: none;
 }
+/* Opacity only: Safari draws moving/blurred page snapshots offset while the page is scrolled. */
 ::view-transition-old(.page-exit) {
-  animation: 220ms var(--ease-in-out-quart) both vt-out;
+  animation: 200ms ease-out both vt-out;
 }
 ::view-transition-new(.page-enter) {
-  animation: 520ms var(--ease-out-expo) 120ms both vt-in;
+  animation: 320ms ease-out 80ms both vt-in;
 }
 @keyframes vt-out {
   to {
     opacity: 0;
-    transform: translateY(-14px);
-    filter: blur(4px);
   }
 }
 @keyframes vt-in {
   from {
     opacity: 0;
-    transform: translateY(24px);
-    filter: blur(6px);
   }
 }
 /* Project screenshot morphs from the card into the project page. */

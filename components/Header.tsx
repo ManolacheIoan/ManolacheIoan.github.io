@@ -130,7 +130,7 @@ export function Header({ lang }: { lang: Lang }) {
         style={{ viewTransitionName: "site-header" }}
         onFocus={() => setHidden(false)}
         // The blur sits on the header itself: a blurred child of a moving header can't see the page behind it.
-        className={`fixed inset-x-0 top-0 z-50 border-b transition-[translate,background-color,backdrop-filter,border-color] duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-[translate,background-color,border-color] duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
           hidden && !open ? "-translate-y-full" : ""
         } ${scrolled && !open ? "border-line bg-bg/75 backdrop-blur-xl" : "border-transparent bg-transparent backdrop-blur-none"}`}
       >
