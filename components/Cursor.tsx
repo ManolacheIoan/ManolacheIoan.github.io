@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Desktop only: a soft sulfur spotlight that follows the pointer, plus a small ring
- * that grows over links and buttons. The real cursor stays visible. Off with reduced motion.
+ * that hides over links, buttons and the header. The real cursor stays visible. Off with reduced motion.
  */
 export function Cursor() {
   const ring = useRef<HTMLDivElement>(null);
@@ -30,15 +30,15 @@ export function Cursor() {
         document.documentElement.classList.add("cursor-on");
       }
       const target = e.target as Element | null;
-      const interactive = target?.closest("a, button, input, textarea, select, [role=button], label");
-      const media = target?.closest(".card-media");
-      ring.current?.classList.toggle("is-hover", Boolean(interactive) && !media);
-      ring.current?.classList.toggle("is-hidden", Boolean(media));
+      // Over links, buttons, the header and project images the ring steps aside:
+      // those already have their own hover effect, and a trailing ring there looks like lag.
+      const busy = target?.closest("a, button, input, textarea, select, [role=button], label, header, .card-media");
+      ring.current?.classList.toggle("is-hidden", Boolean(busy));
     };
     const leave = () => document.documentElement.classList.remove("cursor-on");
     const loop = () => {
-      rx += (x - rx) * 0.2;
-      ry += (y - ry) * 0.2;
+      rx += (x - rx) * 0.4;
+      ry += (y - ry) * 0.4;
       if (ring.current) ring.current.style.transform = `translate3d(${rx}px, ${ry}px, 0)`;
       if (glow.current) glow.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       raf = requestAnimationFrame(loop);

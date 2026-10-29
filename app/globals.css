@@ -449,10 +449,6 @@ body::after {
   border: 1px solid var(--accent-fg);
   transition: scale 0.45s var(--ease-out-expo), background-color 0.3s, opacity 0.3s;
 }
-.cursor-ring.is-hover::before {
-  scale: 1.7;
-  background: color-mix(in srgb, var(--accent) 18%, transparent);
-}
 .cursor-ring.is-hidden::before {
   scale: 0.2;
   opacity: 0;
