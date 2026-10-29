@@ -103,7 +103,8 @@ export function Hero({ lang }: { lang: Lang }) {
           </span>
           <span className="block">
             <Letters word={profile.lastName} start={profile.firstName.length} />
-            <span className="hero-word" aria-hidden="true">
+            {/* Extra room on the right so the dot's rounded edge isn't clipped by the mask. */}
+            <span className="hero-word pr-[0.1em]" aria-hidden="true">
               <span className="hero-letter text-accent-fg" style={{ "--i": profile.name.length + 1 } as CSSProperties}>
                 .
               </span>

@@ -28,17 +28,35 @@ export function Header({ lang }: { lang: Lang }) {
   const [hidden, setHidden] = useState(false);
   const menuBtn = useRef<HTMLButtonElement>(null);
 
-  // Glass background after scrolling; hide on scroll down, show on scroll up.
+  // Glass background after scrolling. The bar hides only after a clear scroll down (80px)
+  // and comes back after a clear scroll up (40px), so small trackpad jitters don't make it flicker.
   useEffect(() => {
     let last = scrollY;
-    const onScroll = () => {
-      const y = scrollY;
-      setScrolled(y > 24);
-      setHidden(y > 400 && y > last + 4);
-      if (y < last - 4) setHidden(false);
+    let travel = 0;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const y = Math.max(0, scrollY);
+      const delta = y - last;
       last = y;
+      setScrolled(y > 24);
+      if (y < 120) {
+        travel = 0;
+        setHidden(false);
+        return;
+      }
+      // Reset the counter when the direction changes.
+      travel = Math.sign(delta) === Math.sign(travel) ? travel + delta : delta;
+      if (travel > 80 && !document.querySelector("header")?.contains(document.activeElement)) setHidden(true);
+      else if (travel < -40) setHidden(false);
     };
-    onScroll();
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    update();
     addEventListener("scroll", onScroll, { passive: true });
     return () => removeEventListener("scroll", onScroll);
   }, []);
@@ -74,9 +92,11 @@ export function Header({ lang }: { lang: Lang }) {
     <>
       <header
         style={{ viewTransitionName: "site-header" }}
-        className={`fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
+        onFocus={() => setHidden(false)}
+        // The blur sits on the header itself: a blurred child of a moving header can't see the page behind it.
+        className={`fixed inset-x-0 top-0 z-50 border-b transition-[translate,background-color,backdrop-filter,border-color] duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
           hidden && !open ? "-translate-y-full" : ""
-        } ${scrolled && !open ? "border-b border-line bg-bg/75 backdrop-blur-xl" : "border-b border-transparent"}`}
+        } ${scrolled && !open ? "border-line bg-bg/75 backdrop-blur-xl" : "border-transparent bg-transparent backdrop-blur-none"}`}
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
           <Link href={paths.home(lang)} className="flex min-h-11 items-center gap-3">
@@ -85,7 +105,7 @@ export function Header({ lang }: { lang: Lang }) {
           </Link>
 
           <nav aria-label={lang === "ro" ? "Principal" : "Main"} className="hidden lg:block">
-            <ul className="flex items-center gap-1 rounded-full border border-line bg-bg/40 px-2 py-1 backdrop-blur">
+            <ul className="flex items-center gap-1 rounded-full border border-line bg-surface/50 px-2 py-1">
               {links.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="block rounded-full px-4 py-2 text-[0.92rem] text-ink-2 transition hover:bg-surface-2 hover:text-ink">
