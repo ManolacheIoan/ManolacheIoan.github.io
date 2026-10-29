@@ -82,6 +82,7 @@
 /* ───────────── Base ───────────── */
 html {
   background: var(--bg);
+  overflow-x: clip;
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 6rem;
 }

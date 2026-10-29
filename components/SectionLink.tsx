@@ -49,7 +49,9 @@ export function SectionLink({
     requestAnimationFrame(() => {
       // Tells the header to stay visible during this scroll.
       dispatchEvent(new Event("section-jump"));
-      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      // Vertical only: left stays at 0, so the page can never slide sideways while scrolling.
+      const top = target.getBoundingClientRect().top + scrollY - (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0);
+      scrollTo({ top, left: 0, behavior: reduce ? "auto" : "smooth" });
       history.replaceState(history.state, "", `#${id}`);
       // Move keyboard focus to the section without jumping.
       if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
