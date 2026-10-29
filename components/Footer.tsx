@@ -5,6 +5,7 @@ import { locale, paths, type Lang } from "@/lib/i18n";
 import { LocalClock } from "./LocalClock";
 import { SocialIcon } from "./SocialIcon";
 import { Arrow } from "./Arrow";
+import { SectionLink } from "./SectionLink";
 
 export function Footer({ lang }: { lang: Lang }) {
   const t = ui[lang];
@@ -23,11 +24,11 @@ export function Footer({ lang }: { lang: Lang }) {
         <nav aria-label={lang === "ro" ? "Subsol" : "Footer"} className="md:col-span-4">
           <ul className="grid grid-cols-2 gap-x-6 gap-y-2">
             <li><Link className="link-u" href={paths.projects(lang)}>{t.nav.work}</Link></li>
-            <li><Link className="link-u" href={paths.section(lang, "despre")}>{t.nav.about}</Link></li>
-            <li><Link className="link-u" href={paths.section(lang, "educatie")}>{t.nav.education}</Link></li>
-            <li><Link className="link-u" href={paths.section(lang, "tehnologii")}>{t.nav.stack}</Link></li>
-            <li><Link className="link-u" href={paths.section(lang, "manotek")}>{t.nav.manotek}</Link></li>
-            <li><Link className="link-u" href={paths.section(lang, "contact")}>{t.nav.contact}</Link></li>
+            <li><SectionLink lang={lang} id="despre" className="link-u">{t.nav.about}</SectionLink></li>
+            <li><SectionLink lang={lang} id="educatie" className="link-u">{t.nav.education}</SectionLink></li>
+            <li><SectionLink lang={lang} id="tehnologii" className="link-u">{t.nav.stack}</SectionLink></li>
+            <li><SectionLink lang={lang} id="manotek" className="link-u">{t.nav.manotek}</SectionLink></li>
+            <li><SectionLink lang={lang} id="contact" className="link-u">{t.nav.contact}</SectionLink></li>
           </ul>
         </nav>
         <div className="flex items-start gap-2 md:col-span-3 md:justify-end">
@@ -52,9 +53,9 @@ export function Footer({ lang }: { lang: Lang }) {
         <p className="t-label">
           {profile.city[lang]} · <LocalClock timeZone={profile.timeZone} locale={locale[lang].replace("_", "-")} />
         </p>
-        <a href="#top" className="link-u inline-flex items-center gap-2">
+        <SectionLink lang={lang} id="top" className="link-u inline-flex items-center gap-2">
           {t.footer.top} <Arrow dir="n" className="h-3.5 w-3.5" />
-        </a>
+        </SectionLink>
       </div>
     </footer>
   );

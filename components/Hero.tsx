@@ -1,13 +1,13 @@
-import Link from "next/link";
 import type { CSSProperties } from "react";
 import { profile } from "@/data/profile";
 import { projects } from "@/data/projects";
 import { allTech } from "@/data/tech";
 import { ui } from "@/data/ui";
-import { locale, paths, type Lang } from "@/lib/i18n";
+import { locale, type Lang } from "@/lib/i18n";
 import { LocalClock } from "./LocalClock";
 import { Rich } from "./Rich";
 import { Arrow } from "./Arrow";
+import { SectionLink } from "./SectionLink";
 
 /** Splits a word into letters that slide up one after another (pure CSS, see .hero-letter). */
 function Letters({ word, start }: { word: string; start: number }) {
@@ -26,8 +26,9 @@ function Letters({ word, start }: { word: string; start: number }) {
 function Badge({ lang }: { lang: Lang }) {
   const text = ui[lang].hero.badge;
   return (
-    <Link
-      href={paths.section(lang, "proiecte")}
+    <SectionLink
+      lang={lang}
+      id="proiecte"
       className="group relative grid h-[5.5rem] w-[5.5rem] shrink-0 place-items-center self-center sm:h-32 sm:w-32 lg:h-40 lg:w-40"
     >
       <svg viewBox="0 0 200 200" className="spin-slow absolute inset-0 h-full w-full" aria-hidden="true">
@@ -44,7 +45,7 @@ function Badge({ lang }: { lang: Lang }) {
       <span aria-hidden="true" className="grid h-10 w-10 place-items-center rounded-full bg-accent text-on-accent transition duration-500 group-hover:scale-125 sm:h-14 sm:w-14">
         <Arrow dir="s" className="h-4 w-4 sm:h-5 sm:w-5" />
       </span>
-    </Link>
+    </SectionLink>
   );
 }
 
@@ -120,12 +121,12 @@ export function Hero({ lang }: { lang: Lang }) {
           <div className="fade-up md:col-span-5 md:justify-self-end" style={{ "--d": "0.5s" } as CSSProperties}>
             <p className="t-label max-w-[38ch] leading-relaxed text-muted">{profile.role[lang]}</p>
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <Link href={paths.section(lang, "proiecte")} className="btn btn-primary">
+              <SectionLink lang={lang} id="proiecte" className="btn btn-primary">
                 {t.hero.seeWork} <Arrow />
-              </Link>
-              <Link href={paths.section(lang, "contact")} className="btn btn-ghost">
+              </SectionLink>
+              <SectionLink lang={lang} id="contact" className="btn btn-ghost">
                 {t.hero.contact}
-              </Link>
+              </SectionLink>
               <a href={profile.cv} download className="link-u t-label ml-1 inline-flex min-h-11 items-center gap-1.5 text-ink-2">
                 {t.downloadCv} <Arrow dir="s" className="h-3.5 w-3.5" />
               </a>

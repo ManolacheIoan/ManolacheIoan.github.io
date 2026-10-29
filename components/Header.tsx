@@ -9,6 +9,7 @@ import { ui } from "@/data/ui";
 import { otherLangPath, paths, type Lang } from "@/lib/i18n";
 import { ThemeToggle } from "./ThemeToggle";
 import { Arrow } from "./Arrow";
+import { SectionLink } from "./SectionLink";
 
 export function Monogram({ className = "h-9 w-9" }: { className?: string }) {
   return (
@@ -34,6 +35,11 @@ export function Header({ lang }: { lang: Lang }) {
     let last = scrollY;
     let travel = 0;
     let ticking = false;
+    let jumpUntil = 0;
+    const onJump = () => {
+      jumpUntil = performance.now() + 1600;
+      setHidden(false);
+    };
     const update = () => {
       ticking = false;
       const y = Math.max(0, scrollY);
@@ -43,6 +49,10 @@ export function Header({ lang }: { lang: Lang }) {
       if (y < 120) {
         travel = 0;
         setHidden(false);
+        return;
+      }
+      if (performance.now() < jumpUntil) {
+        travel = 0;
         return;
       }
       // Reset the counter when the direction changes.
@@ -58,7 +68,11 @@ export function Header({ lang }: { lang: Lang }) {
     };
     update();
     addEventListener("scroll", onScroll, { passive: true });
-    return () => removeEventListener("scroll", onScroll);
+    addEventListener("section-jump", onJump);
+    return () => {
+      removeEventListener("scroll", onScroll);
+      removeEventListener("section-jump", onJump);
+    };
   }, []);
 
   // Mobile menu: lock scroll, close on Escape.
@@ -79,13 +93,35 @@ export function Header({ lang }: { lang: Lang }) {
     };
   }, [open]);
 
-  const links = [
+  // `id` = section of the home page (scrolls there); otherwise a normal page link.
+  const links: { href: string; label: string; id?: string }[] = [
     { href: paths.projects(lang), label: t.nav.work },
-    { href: paths.section(lang, "despre"), label: t.nav.about },
-    { href: paths.section(lang, "educatie"), label: t.nav.education },
-    { href: paths.section(lang, "tehnologii"), label: t.nav.stack },
-    { href: paths.section(lang, "contact"), label: t.nav.contact },
+    { href: paths.section(lang, "despre"), label: t.nav.about, id: "despre" },
+    { href: paths.section(lang, "educatie"), label: t.nav.education, id: "educatie" },
+    { href: paths.section(lang, "tehnologii"), label: t.nav.stack, id: "tehnologii" },
+    { href: paths.section(lang, "contact"), label: t.nav.contact, id: "contact" },
   ];
+  const navLink = (l: (typeof links)[number], className: string, children: React.ReactNode, extra?: { onNavigate?: () => void; autoFocus?: boolean }) =>
+    l.id ? (
+      <SectionLink lang={lang} id={l.id} className={className} onNavigate={extra?.onNavigate}>
+        {children}
+      </SectionLink>
+    ) : (
+      <Link href={l.href} className={className} onClick={extra?.onNavigate} autoFocus={extra?.autoFocus}>
+        {children}
+      </Link>
+    );
+
+  // The logo reloads the home page and starts at the top.
+  function goHome(e: React.MouseEvent<HTMLAnchorElement>) {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    try {
+      history.scrollRestoration = "manual";
+    } catch {}
+    window.scrollTo({ top: 0, behavior: "instant" });
+    location.assign(paths.home(lang));
+  }
   const other: Lang = lang === "ro" ? "en" : "ro";
 
   return (
@@ -99,18 +135,16 @@ export function Header({ lang }: { lang: Lang }) {
         } ${scrolled && !open ? "border-line bg-bg/75 backdrop-blur-xl" : "border-transparent bg-transparent backdrop-blur-none"}`}
       >
         <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
-          <Link href={paths.home(lang)} className="flex min-h-11 items-center gap-3">
+          <a href={paths.home(lang)} onClick={goHome} className="flex min-h-11 items-center gap-3">
             <Monogram />
             <span className="font-display text-[1.05rem] font-semibold tracking-[-0.03em]">{profile.alias}</span>
-          </Link>
+          </a>
 
           <nav aria-label={lang === "ro" ? "Principal" : "Main"} className="hidden lg:block">
             <ul className="flex items-center gap-1 rounded-full border border-line bg-surface/50 px-2 py-1">
               {links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="block rounded-full px-4 py-2 text-[0.92rem] text-ink-2 transition hover:bg-surface-2 hover:text-ink">
-                    {l.label}
-                  </Link>
+                  {navLink(l, "block rounded-full px-4 py-2 text-[0.92rem] text-ink-2 transition hover:bg-surface-2 hover:text-ink", l.label)}
                 </li>
               ))}
             </ul>
@@ -166,15 +200,15 @@ export function Header({ lang }: { lang: Lang }) {
                       animate={{ y: 0 }}
                       transition={{ delay: 0.25 + i * 0.06, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     >
-                      <Link
-                        href={l.href}
-                        onClick={() => setOpen(false)}
-                        autoFocus={i === 0}
-                        className="flex items-baseline justify-between py-4 font-display text-[2.6rem] font-semibold leading-none tracking-[-0.04em]"
-                      >
-                        {l.label}
-                        <span className="t-label text-muted">0{i + 1}</span>
-                      </Link>
+                      {navLink(
+                        l,
+                        "flex items-baseline justify-between py-4 font-display text-[2.6rem] font-semibold leading-none tracking-[-0.04em]",
+                        <>
+                          {l.label}
+                          <span className="t-label text-muted">0{i + 1}</span>
+                        </>,
+                        { onNavigate: () => setOpen(false), autoFocus: i === 0 },
+                      )}
                     </motion.div>
                   </li>
                 ))}

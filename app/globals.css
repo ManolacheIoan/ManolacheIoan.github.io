@@ -531,3 +531,8 @@ body::after {
     transform: translate(12%, -8%) scale(0.9);
   }
 }
+
+/* Sections focused after an in-page jump: no outline box around the whole section. */
+section[tabindex="-1"]:focus {
+  outline: none;
+}
