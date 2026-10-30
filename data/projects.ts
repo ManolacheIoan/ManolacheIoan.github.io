@@ -104,7 +104,7 @@ export const projects: Project[] = [
         "User accounts, installable as an app",
       ],
     },
-    status: { ro: "Funcțional și testat · încă nepublic", en: "Working and tested · not public yet" },
+    status: { ro: "Funcțional și testat · încă nelansat", en: "Working and tested · not launched yet" },
     statusTone: "ready",
     tech: [...NEXT_TS, "python", "fastapi", "rest", "postgresql", "pwa"],
     image: "fitplan",
