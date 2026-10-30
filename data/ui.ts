@@ -34,7 +34,7 @@ const ro = {
     stack: {
       kicker: "Tehnologii",
       title: "Uneltele *cu care lucrez*",
-      hint: "Alege o tehnologie ca să vezi unde am folosit-o.",
+      hint: "Alege o tehnologie pentru a vedea unde am folosit-o.",
       usedIn: (n: number) => (n === 1 ? "Folosită într-un proiect" : `Folosită în ${n} proiecte`),
       workflow: "Parte din felul în care lucrez la fiecare proiect",
       none: "Încă nu are un proiect public aici",
@@ -63,7 +63,7 @@ const ro = {
   },
   projects: {
     title: "Toate *proiectele*",
-    lead: "Proiecte personale, pe care le construiesc pentru mine, și proiecte demo, făcute pentru firme inventate, ca să arăt ce pot face pentru una reală.",
+    lead: "Proiecte personale, pe care le construiesc pentru mine, și proiecte demo, făcute pentru firme inventate, pentru a arăta ce pot face pentru una reală.",
     all: "Toate",
     personal: "Personale",
     demo: "Demo",
@@ -84,7 +84,7 @@ const ro = {
     contains: "Ce conține",
     about: "Despre proiect",
     demoNote:
-      "Proiect demo: firma, persoanele, prețurile și datele de contact sunt inventate. L-am construit ca să arăt cum ar arăta un site real pentru o astfel de afacere.",
+      "Proiect demo: firma, persoanele, prețurile și datele de contact sunt inventate. L-am construit pentru a arăta cum ar putea fi un site real pentru o astfel de afacere.",
     next: "Proiectul următor",
     watchAlt: "Schema de funcționare Manotek Watch",
   },

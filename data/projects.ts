@@ -336,15 +336,15 @@ export const projects: Project[] = [
     },
     description: {
       ro: [
-        "Catalog online cu căutare care ignoră diacriticele, filtre pe categorii și câte o pagină pentru fiecare produs, cu variante și buton „Sună acum”.",
+        "Catalog online cu căutare rapidă de produse, filtre pe categorii și câte o pagină pentru fiecare produs, cu variante și buton „Sună acum”.",
       ],
       en: [
-        "An online catalog with search that ignores diacritics, category filters and a page for every product, with variants and a “Call now” button.",
+        "An online catalog with fast product search, category filters and a page for every product, with variants and a “Call now” button.",
       ],
     },
     features: {
-      ro: ["Căutare care ignoră diacriticele", "Filtre pe categorii", "Pagină de produs cu variante", "Buton „Sună acum”"],
-      en: ["Diacritics-insensitive search", "Category filters", "Product pages with variants", "“Call now” button"],
+      ro: ["Căutare rapidă de produse", "Filtre pe categorii", "Pagină de produs cu variante", "Buton „Sună acum”"],
+      en: ["Fast product search", "Category filters", "Product pages with variants", "“Call now” button"],
     },
     status: { ro: "Demo", en: "Demo" },
     statusTone: "demo",

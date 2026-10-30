@@ -7,7 +7,7 @@ Portofoliul personal al lui Ioan Manolache (John Mnl). Next.js 16 (App Router), 
 ```bash
 npm install
 npm run dev          # http://localhost:3000
-npm run dev -- -H 0.0.0.0   # ca să-l deschizi și de pe telefon, din aceeași rețea Wi-Fi
+npm run dev -- -H 0.0.0.0   # pentru a-l deschide și de pe telefon, din aceeași rețea Wi-Fi
 npm run build        # generează site-ul static în /out
 npm run lint && npm run typecheck
 ```
@@ -42,7 +42,7 @@ Cuvintele scrise între `*stele*` apar în italic serif, colorat (de ex. `"Lucru
 - [ ] **Domeniu propriu (opțional):** site-ul e publicat la `https://manolacheioan.github.io`. Dacă iei un domeniu, schimbă `NEXT_PUBLIC_SITE_URL` în `.github/workflows/deploy.yml` și adaugă domeniul în Settings → Pages.
 - [x] **Formular (opțional):** creează un formular pe formspree.io și pune ID-ul în `formspreeId`. Fără el, butonul deschide aplicația de email cu mesajul completat.
 - [ ] **Manotek.ro:** când domeniul e online, pune `isLive: true` în `data/manotek.ts`. Captura `manotek.png` e făcută din build-ul local.
-- [ ] **Disponibilitate:** textul „Deschis la colaborări” din hero e în `profile.availability` (pune `null` ca să-l ascunzi).
+- [ ] **Disponibilitate:** textul „Deschis la colaborări” din hero e în `profile.availability` (pune `null` pentru a-l ascunde).
 
 ## Publicare
 
