@@ -10,9 +10,9 @@ export function PersonJsonLd({ lang }: { lang: Lang }) {
     name: profile.name,
     alternateName: profile.alias,
     url: `${SITE_URL}${lang === "ro" ? "/" : "/en/"}`,
-    jobTitle: lang === "ro" ? "Full-stack developer" : "Full-stack developer",
+    jobTitle: "Software Engineer",
     ...(isPlaceholder(profile.email) ? {} : { email: `mailto:${profile.email}` }),
-    address: { "@type": "PostalAddress", addressLocality: "Galați", addressCountry: "RO" },
+    address: { "@type": "PostalAddress", addressCountry: "RO" },
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: "Universitatea „Dunărea de Jos” din Galați",

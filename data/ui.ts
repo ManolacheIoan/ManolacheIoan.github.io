@@ -24,7 +24,7 @@ const ro = {
     contact: "Contact",
     localTime: "ora locală",
     scroll: "Derulează",
-    badge: "John Mnl · full-stack developer · Galați · ",
+    badge: "John Mnl · software engineer · România · ",
   },
   stats: { projects: "proiecte", personal: "personale", demo: "demo", tech: "tehnologii" },
   sections: {
@@ -44,7 +44,7 @@ const ro = {
     manotek: { kicker: "Studio", title: "Manotek, *studioul meu*", visit: "Vizitează manotek.ro", soon: "manotek.ro · lansare în pregătire" },
     contact: {
       kicker: "Contact",
-      title: "Ai un proiect sau *o oportunitate*?",
+      title: "Totul începe *de la o idee*",
       lead: "Scrie-mi câteva rânduri despre ce ai în minte. Răspund personal.",
     },
   },
@@ -118,7 +118,7 @@ const en: Ui = {
     contact: "Contact",
     localTime: "local time",
     scroll: "Scroll",
-    badge: "John Mnl · full-stack developer · Galați · ",
+    badge: "John Mnl · software engineer · Romania · ",
   },
   stats: { projects: "projects", personal: "personal", demo: "demo", tech: "technologies" },
   sections: {
@@ -138,7 +138,7 @@ const en: Ui = {
     manotek: { kicker: "Studio", title: "Manotek, *my studio*", visit: "Visit manotek.ro", soon: "manotek.ro · launch in preparation" },
     contact: {
       kicker: "Contact",
-      title: "Got a project or *an opportunity*?",
+      title: "It all starts *with an idea*",
       lead: "Send me a few lines about what you have in mind. I reply personally.",
     },
   },

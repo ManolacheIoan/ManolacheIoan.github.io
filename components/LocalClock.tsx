@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** Live local time in Galați (updates every 15s). Empty on the server to avoid a mismatch. */
+/** Live local time in Romania (updates every 15s). Empty on the server to avoid a mismatch. */
 export function LocalClock({ timeZone, locale }: { timeZone: string; locale: string }) {
   const [now, setNow] = useState<string>("");
   useEffect(() => {

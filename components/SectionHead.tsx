@@ -17,7 +17,7 @@ export function SectionHead({
   aside?: ReactNode;
 }) {
   return (
-    <div className="grid gap-8 border-t border-line pt-6 md:grid-cols-12 md:pt-8">
+    <div data-section-head className="grid gap-8 border-t border-line pt-6 md:grid-cols-12 md:pt-8">
       <p className="t-label flex items-center gap-3 text-muted md:col-span-3">
         <span className="text-accent-fg">({index})</span>
         <span aria-hidden="true" className="h-px w-8 bg-line-strong" />

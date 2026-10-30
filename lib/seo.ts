@@ -5,8 +5,8 @@ import { locale, paths, type Lang } from "@/lib/i18n";
 export const siteTitle = `${profile.name} (${profile.alias})`;
 
 export const siteDescription: Record<Lang, string> = {
-  ro: "Portofoliul lui Ioan Manolache (John Mnl): full-stack developer din Galați, masterand în Informatică Aplicată la UGAL și fondatorul Manotek. Proiecte cu Next.js, TypeScript, Python și PostgreSQL.",
-  en: "Portfolio of Ioan Manolache (John Mnl): full-stack developer from Galați, Romania, MSc student in Applied Computer Science at UGAL and founder of Manotek. Projects built with Next.js, TypeScript, Python and PostgreSQL.",
+  ro: "Portofoliul lui Ioan Manolache (John Mnl): Software Engineer din România, care construiește aplicații web full-stack, masterand în Informatică Aplicată la UGAL și fondatorul Manotek. Proiecte cu Next.js, TypeScript, Python și PostgreSQL.",
+  en: "Portfolio of Ioan Manolache (John Mnl): Software Engineer from Romania building full-stack web applications, MSc student in Applied Computer Science at UGAL and founder of Manotek. Projects built with Next.js, TypeScript, Python and PostgreSQL.",
 };
 
 export const themeColor = [

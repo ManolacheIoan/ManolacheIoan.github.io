@@ -44,8 +44,8 @@ export function Footer({ lang }: { lang: Lang }) {
       </div>
 
       {/* Giant wordmark */}
-      <p aria-hidden="true" className="footer-mark container-x mt-14 select-none whitespace-nowrap font-display font-bold leading-[0.8] tracking-[-0.06em]">
-        John Mnl<span className="text-accent-fg">.</span>
+      <p aria-hidden="true" className="footer-mark container-x mt-14 select-none whitespace-nowrap text-center font-display font-bold leading-[0.8] tracking-[-0.06em]">
+        John Mnl<span className="ml-[0.12em] text-accent-fg">.</span>
       </p>
 
       <div className="container-x flex flex-wrap items-center justify-between gap-4 border-t border-line py-6 text-sm text-muted">

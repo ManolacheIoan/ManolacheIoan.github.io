@@ -20,12 +20,15 @@ export function SectionLink({
   className,
   children,
   onNavigate,
+  toHeading = false,
 }: {
   lang: Lang;
   id: string;
   className?: string;
   children: ReactNode;
   onNavigate?: () => void;
+  /** Land with the section title at the top of the screen (header tucked away) instead of at the section start. */
+  toHeading?: boolean;
 }) {
   const pathname = usePathname() || "/";
   const href = paths.section(lang, id);
@@ -47,10 +50,15 @@ export function SectionLink({
     const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
     // Wait a frame so a closing mobile menu can release the scroll lock first.
     requestAnimationFrame(() => {
-      // Tells the header to stay visible during this scroll.
-      dispatchEvent(new Event("section-jump"));
+      // Tells the header to stay visible during this scroll (or to hide, when landing on the title).
+      dispatchEvent(new CustomEvent("section-jump", { detail: { hideHeader: toHeading } }));
       // Vertical only: left stays at 0, so the page can never slide sideways while scrolling.
-      const top = target.getBoundingClientRect().top + scrollY - (parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0);
+      // toHeading: the line above the section title goes just past the top edge.
+      // A section marked data-jump="section" lands at its own top edge instead (its padding stays visible).
+      const toSectionTop = target.dataset.jump === "section";
+      const head = toHeading && !toSectionTop ? (target.querySelector("[data-section-head]") ?? target.firstElementChild) : null;
+      const offset = toHeading ? 0 : parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+      const top = head ? head.getBoundingClientRect().top + scrollY + 1 : target.getBoundingClientRect().top + scrollY - offset;
       scrollTo({ top, left: 0, behavior: reduce ? "auto" : "smooth" });
       // Move keyboard focus to the section without jumping.
       if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");

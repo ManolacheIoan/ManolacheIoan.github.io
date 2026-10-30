@@ -17,7 +17,7 @@ export function Education({ lang }: { lang: Lang }) {
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="educatie" aria-labelledby="edu-title" className="container-x py-24 sm:py-32">
+    <section id="educatie" data-jump="section" aria-labelledby="edu-title" className="container-x py-24 sm:py-32">
       <SectionHead index="03" kicker={t.sections.education.kicker} title={t.sections.education.title} id="edu-title" />
       <ol ref={ref} className="relative mt-16 grid gap-16 md:ml-[25%] md:gap-20">
         {/* track + drawn line */}

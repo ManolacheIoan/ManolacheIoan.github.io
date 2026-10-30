@@ -9,7 +9,7 @@ export const profile = {
   alias: "John Mnl",
   firstName: "Ioan",
   lastName: "Manolache",
-  city: { ro: "Galați, România", en: "Galați, Romania" } satisfies L,
+  city: { ro: "România", en: "Romania" } satisfies L,
   /** IANA time zone, used for the live clock in the hero. */
   timeZone: "Europe/Bucharest",
 
@@ -32,14 +32,14 @@ export const profile = {
   } satisfies L as L | null,
 
   role: {
-    ro: "Full-stack developer · Masterand Informatică Aplicată, UGAL",
-    en: "Full-stack developer · MSc student in Applied Computer Science, UGAL",
+    ro: "Software Engineer · Masterand Informatică Aplicată, UGAL",
+    en: "Software Engineer · MSc student in Applied Computer Science, UGAL",
   } satisfies L,
 
   /** Hero sentence. Words between *stars* are set in the italic serif. */
   intro: {
-    ro: "Construiesc *aplicații web complete*, de la interfață la server și bază de date, pentru oameni care chiar le folosesc.",
-    en: "I build *complete web applications*, from interface to server and database, for people who actually use them.",
+    ro: "Construiesc *aplicații web complete*, de la interfață la server și bază de date. Simple de folosit oricând, oriunde.",
+    en: "I build *complete web applications*, from interface to server and database. Simple to use anytime, anywhere.",
   } satisfies L,
 
   /** "About me" paragraphs. */
@@ -58,7 +58,7 @@ export const profile = {
 
   /** Short facts shown next to the "About" text. */
   facts: [
-    { label: { ro: "Bază", en: "Based in" }, value: { ro: "Galați, RO", en: "Galați, RO" } },
+    { label: { ro: "Bază", en: "Based in" }, value: { ro: "România", en: "Romania" } },
     { label: { ro: "Studii", en: "Studies" }, value: { ro: "Master, anul I · UGAL", en: "MSc, year 1 · UGAL" } },
     { label: { ro: "Studio", en: "Studio" }, value: { ro: "Fondator Manotek", en: "Founder of Manotek" } },
     { label: { ro: "Online", en: "Online" }, value: { ro: "John Mnl", en: "John Mnl" } },

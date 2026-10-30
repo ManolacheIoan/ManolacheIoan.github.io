@@ -29,6 +29,7 @@ function Badge({ lang }: { lang: Lang }) {
     <SectionLink
       lang={lang}
       id="proiecte"
+      toHeading
       className="group relative grid h-[5.5rem] w-[5.5rem] shrink-0 place-items-center self-center sm:h-32 sm:w-32 lg:h-40 lg:w-40"
     >
       <svg viewBox="0 0 200 200" className="spin-slow absolute inset-0 h-full w-full" aria-hidden="true">
@@ -88,7 +89,7 @@ export function Hero({ lang }: { lang: Lang }) {
               </span>
             ) : null}
             <span>
-              Galați · <LocalClock timeZone={profile.timeZone} locale={locale[lang].replace("_", "-")} />
+              {profile.city[lang]} · <LocalClock timeZone={profile.timeZone} locale={locale[lang].replace("_", "-")} />
             </span>
           </div>
         </div>

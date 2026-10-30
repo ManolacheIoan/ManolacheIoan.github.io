@@ -376,6 +376,7 @@ export const projects: Project[] = [
     slug: "respiro",
     name: "Respiro",
     kind: "demo",
+    featured: true,
     tagline: {
       ro: "Studio de masaj, cu card cadou tipăribil și ghid de respirație animat.",
       en: "Massage studio, with a printable gift card and an animated breathing guide.",
@@ -401,7 +402,6 @@ export const projects: Project[] = [
     slug: "birou-notarial-cervin",
     name: "Birou Notarial Cervin",
     kind: "demo",
-    featured: true,
     tagline: {
       ro: "Birou notarial, cu acte necesare interactive și estimator de onorarii.",
       en: "Notary office, with an interactive document checklist and a fee estimator.",
@@ -459,7 +459,7 @@ export const featuredOrder = [
   "busola",
   "viata-de-hibrid",
   "zambet-mare",
-  "birou-notarial-cervin",
+  "respiro",
 ];
 
 export const featuredProjects = featuredOrder

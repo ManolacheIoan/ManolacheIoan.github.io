@@ -36,9 +36,9 @@ export function Header({ lang }: { lang: Lang }) {
     let travel = 0;
     let ticking = false;
     let jumpUntil = 0;
-    const onJump = () => {
+    const onJump = (e: Event) => {
       jumpUntil = performance.now() + 1600;
-      setHidden(false);
+      setHidden(Boolean((e as CustomEvent<{ hideHeader?: boolean }>).detail?.hideHeader));
     };
     const update = () => {
       ticking = false;
@@ -46,13 +46,14 @@ export function Header({ lang }: { lang: Lang }) {
       const delta = y - last;
       last = y;
       setScrolled(y > 24);
+      // During a section jump the header keeps the state the jump asked for.
+      if (performance.now() < jumpUntil) {
+        travel = 0;
+        return;
+      }
       if (y < 120) {
         travel = 0;
         setHidden(false);
-        return;
-      }
-      if (performance.now() < jumpUntil) {
-        travel = 0;
         return;
       }
       // Reset the counter when the direction changes.
@@ -103,7 +104,7 @@ export function Header({ lang }: { lang: Lang }) {
   ];
   const navLink = (l: (typeof links)[number], className: string, children: React.ReactNode, extra?: { onNavigate?: () => void; autoFocus?: boolean }) =>
     l.id ? (
-      <SectionLink lang={lang} id={l.id} className={className} onNavigate={extra?.onNavigate}>
+      <SectionLink lang={lang} id={l.id} className={className} onNavigate={extra?.onNavigate} toHeading>
         {children}
       </SectionLink>
     ) : (
@@ -134,8 +135,8 @@ export function Header({ lang }: { lang: Lang }) {
           hidden && !open ? "-translate-y-full" : ""
         } ${scrolled && !open ? "border-line bg-bg/75 backdrop-blur-xl" : "border-transparent bg-transparent backdrop-blur-none"}`}
       >
-        <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem]">
-          <a href={paths.home(lang)} onClick={goHome} className="flex min-h-11 items-center gap-3">
+        <div className="container-x flex h-16 items-center justify-between gap-4 sm:h-[4.5rem] lg:grid lg:grid-cols-[1fr_auto_1fr]">
+          <a href={paths.home(lang)} onClick={goHome} className="flex min-h-11 items-center gap-3 lg:justify-self-start">
             <Monogram />
             <span className="font-display text-[1.05rem] font-semibold tracking-[-0.03em]">{profile.alias}</span>
           </a>
@@ -150,7 +151,7 @@ export function Header({ lang }: { lang: Lang }) {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 lg:justify-self-end">
             <a
               href={otherLangPath(pathname, other)}
               hrefLang={other}

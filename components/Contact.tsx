@@ -19,7 +19,7 @@ export function Contact({ lang }: { lang: Lang }) {
     <section id="contact" aria-labelledby="contact-title" className="relative overflow-hidden py-24 sm:py-32">
       <div aria-hidden="true" className="pointer-events-none absolute -right-40 top-10 -z-10 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,color-mix(in_srgb,#8e3a7d_35%,transparent),transparent_70%)] blur-2xl" />
       <div className="container-x">
-        <p className="t-label flex items-center gap-3 border-t border-line pt-6 text-muted md:pt-8">
+        <p data-section-head className="t-label flex items-center gap-3 border-t border-line pt-6 text-muted md:pt-8">
           <span className="text-accent-fg">(06)</span>
           <span aria-hidden="true" className="h-px w-8 bg-line-strong" />
           {t.kicker}
