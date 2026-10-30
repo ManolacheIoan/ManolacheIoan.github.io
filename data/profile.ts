@@ -38,8 +38,8 @@ export const profile = {
 
   /** Hero sentence. Words between *stars* are set in the italic serif. */
   intro: {
-    ro: "Construiesc *aplicații web complete*, de la interfață la server și bază de date. Simple de folosit oricând, oriunde.",
-    en: "I build *complete web applications*, from interface to server and database. Simple to use anytime, anywhere.",
+    ro: "Construiesc *aplicații complete*, de la interfață la server și bază de date. Simple de folosit oricând, oriunde.",
+    en: "I build *complete applications*, from interface to server and database. Simple to use anytime, anywhere.",
   } satisfies L,
 
   /** "About me" paragraphs. */
