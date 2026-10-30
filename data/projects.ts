@@ -108,6 +108,7 @@ export const projects: Project[] = [
     statusTone: "ready",
     tech: [...NEXT_TS, "python", "fastapi", "rest", "postgresql", "pwa"],
     image: "fitplan",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/fitplan" }],
   },
   {
     slug: "busola",
