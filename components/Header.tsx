@@ -162,7 +162,7 @@ export function Header({ lang }: { lang: Lang }) {
               {other.toUpperCase()}
             </a>
             <ThemeToggle lang={lang} />
-            <a href={profile.cv} download className="btn btn-primary hidden !min-h-10 !px-4 text-sm sm:inline-flex">
+            <a href={profile.cv} download="Ioan_Manolache_CV.pdf" className="btn btn-primary hidden !min-h-10 !px-4 text-sm sm:inline-flex">
               {t.cv} <Arrow dir="s" className="h-3.5 w-3.5" />
             </a>
             <button
@@ -216,7 +216,7 @@ export function Header({ lang }: { lang: Lang }) {
               </ul>
             </nav>
             <div className="container-x flex items-center justify-between gap-4 pb-8 pt-6">
-              <a href={profile.cv} download className="btn btn-primary">
+              <a href={profile.cv} download="Ioan_Manolache_CV.pdf" className="btn btn-primary">
                 {t.downloadCv} <Arrow dir="s" />
               </a>
               <span className="t-label text-muted">{profile.city[lang]}</span>

@@ -128,7 +128,7 @@ export function Hero({ lang }: { lang: Lang }) {
               <SectionLink lang={lang} id="contact" className="btn btn-ghost">
                 {t.hero.contact}
               </SectionLink>
-              <a href={profile.cv} download className="link-u t-label ml-1 inline-flex min-h-11 items-center gap-1.5 text-ink-2">
+              <a href={profile.cv} download="Ioan_Manolache_CV.pdf" className="link-u t-label ml-1 inline-flex min-h-11 items-center gap-1.5 text-ink-2">
                 {t.downloadCv} <Arrow dir="s" className="h-3.5 w-3.5" />
               </a>
             </div>

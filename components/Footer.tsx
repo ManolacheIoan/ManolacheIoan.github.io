@@ -37,7 +37,7 @@ export function Footer({ lang }: { lang: Lang }) {
               <SocialIcon name={s.name} />
             </a>
           ))}
-          <a href={profile.cv} download className="grid h-11 place-items-center rounded-full border border-line px-4 t-label transition hover:border-accent hover:bg-accent hover:text-on-accent">
+          <a href={profile.cv} download="Ioan_Manolache_CV.pdf" className="grid h-11 place-items-center rounded-full border border-line px-4 t-label transition hover:border-accent hover:bg-accent hover:text-on-accent">
             {t.cv} ↓
           </a>
         </div>
