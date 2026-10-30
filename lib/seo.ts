@@ -28,9 +28,9 @@ export function baseMetadata(lang: Lang): Metadata {
       siteName: `${profile.alias} · ${profile.name}`,
       locale: locale[lang],
       alternateLocale: locale[lang === "ro" ? "en" : "ro"],
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: siteTitle }],
+      images: [{ url: "/og-v2.png", width: 1200, height: 630, alt: siteTitle }],
     },
-    twitter: { card: "summary_large_image", images: ["/og.png"] },
+    twitter: { card: "summary_large_image", images: ["/og-v2.png"] },
     icons: { icon: [{ url: "/icon.svg", type: "image/svg+xml" }] },
   };
 }
@@ -50,7 +50,7 @@ export function pageMetadata(lang: Lang, opts: { title?: string; description?: s
       ...(opts.title ? { title: `${opts.title} · ${profile.alias}` } : {}),
       ...(opts.description ? { description: opts.description } : {}),
       locale: locale[lang],
-      images: [{ url: "/og.png", width: 1200, height: 630, alt: siteTitle }],
+      images: [{ url: "/og-v2.png", width: 1200, height: 630, alt: siteTitle }],
     },
   };
 }
