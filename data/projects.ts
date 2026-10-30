@@ -220,6 +220,7 @@ export const projects: Project[] = [
     statusTone: "ready",
     tech: [...NEXT_TS, "tailwind", "motion"],
     image: "viata-de-hibrid",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/viata-de-hibrid" }],
   },
   {
     slug: "manotek-watch",
@@ -382,7 +383,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: [...NEXT_TS, "css", "a11y"],
     image: "zambet-mare",
-    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/zambet-mare" }],
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/dental-clinic-website" }],
   },
   {
     slug: "atelierul-suvitelor",
