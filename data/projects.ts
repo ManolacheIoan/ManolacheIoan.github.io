@@ -63,7 +63,7 @@ export const projects: Project[] = [
         "Favorites",
       ],
     },
-    status: { ro: "În lucru · încă negăzduit", en: "In progress · not hosted yet" },
+    status: { ro: "În lucru", en: "In progress" },
     statusTone: "local",
     tech: [...NEXT_TS, "tailwind"],
     image: "alegemasina",
