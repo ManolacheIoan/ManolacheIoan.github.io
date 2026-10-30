@@ -235,7 +235,7 @@ export const projects: Project[] = [
       "python", "fastapi", "rest", "postgresql", "sqlalchemy", "nextjs", "react", "typescript",
       "pytest", "vitest", "playwright", "docker", "githubactions", "caddy", "prometheus", "grafana",
     ],
-    diagram: "watch",
+    image: "manotek-watch",
   },
   {
     slug: "manotek",
