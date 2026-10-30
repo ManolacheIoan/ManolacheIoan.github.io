@@ -151,6 +151,33 @@ export const projects: Project[] = [
     image: "busola",
   },
   {
+    slug: "progres-100",
+    name: "Progres 100",
+    kind: "personal",
+    tagline: {
+      ro: "Aplicație mobilă de urmărire a progresului, cu sfaturi generate de AI. Lucrarea mea de licență.",
+      en: "A mobile progress-tracking app with AI-generated tips. My bachelor's thesis.",
+    },
+    description: {
+      ro: [
+        "Lucrarea mea de licență: o aplicație mobilă care te ajută să-ți urmărești progresul zi de zi, după motto-ul „Fiecare zi contează”.",
+        "Am construit-o cu React Native și Expo, cu datele în Firebase, iar sfaturile personalizate sunt generate cu AI prin Claude API.",
+      ],
+      en: [
+        "My bachelor's thesis: a mobile app that helps you track your progress day by day, built around the motto “Every day counts”.",
+        "I built it with React Native and Expo, with data stored in Firebase, and personalised tips generated with AI through the Claude API.",
+      ],
+    },
+    features: {
+      ro: ["Aplicație mobilă cu React Native și Expo", "Urmărirea progresului zilnic", "Sfaturi generate cu AI (Claude API)", "Date sincronizate în Firebase"],
+      en: ["Mobile app built with React Native and Expo", "Daily progress tracking", "AI-generated tips (Claude API)", "Data synced with Firebase"],
+    },
+    status: { ro: "Lucrare de licență", en: "Bachelor's thesis" },
+    statusTone: "ready",
+    tech: ["reactnative", "expo", "firebase", "claude"],
+    image: "progres-100",
+  },
+  {
     slug: "viata-de-hibrid",
     name: "Viața de Hibrid",
     kind: "personal",
