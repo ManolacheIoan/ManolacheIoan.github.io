@@ -48,10 +48,10 @@ export const education: EducationItem[] = [
     // Example: { ro: ["Structuri de date", "Baze de date"], en: ["Data structures", "Databases"] }
     courses: { ro: [], en: [] },
     thesis: {
-      title: { ro: "Progres 100: aplicație mobilă de urmărire a progresului", en: "Progres 100: a mobile progress-tracking app" },
+      title: { ro: "Progres 100: aplicație mobilă pentru renunțarea la obiceiurile nocive", en: "Progres 100: a mobile app for breaking harmful habits" },
       summary: {
-        ro: "Aplicație mobilă construită cu React Native, Expo și Firebase, care urmărește progresul și oferă sfaturi generate cu AI prin Claude API.",
-        en: "A mobile app built with React Native, Expo and Firebase that tracks progress and gives AI-generated tips through the Claude API.",
+        ro: "Aplicație mobilă construită cu React Native, Expo și Firebase, care te ajută să renunți la obiceiurile nocive, îți urmărește progresul și oferă sfaturi generate cu AI prin Claude API.",
+        en: "A mobile app built with React Native, Expo and Firebase that helps you break harmful habits, tracks your progress and gives AI-generated tips through the Claude API.",
       },
     },
     internship: {

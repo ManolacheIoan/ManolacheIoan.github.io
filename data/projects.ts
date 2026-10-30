@@ -67,6 +67,7 @@ export const projects: Project[] = [
     statusTone: "local",
     tech: [...NEXT_TS, "tailwind"],
     image: "alegemasina",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/used-car-advisor" }],
   },
   {
     slug: "fitplan",
@@ -149,33 +150,35 @@ export const projects: Project[] = [
     statusTone: "ready",
     tech: ["html", "css", "javascript", "claude"],
     image: "busola",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/busola-career-assessment" }],
   },
   {
     slug: "progres-100",
     name: "Progres 100",
     kind: "personal",
     tagline: {
-      ro: "Aplicație mobilă de urmărire a progresului, cu sfaturi generate de AI. Lucrarea mea de licență.",
-      en: "A mobile progress-tracking app with AI-generated tips. My bachelor's thesis.",
+      ro: "Aplicație mobilă care te ajută să renunți la obiceiurile nocive, cu sfaturi generate de AI. Lucrarea mea de licență.",
+      en: "A mobile app that helps you break harmful habits, with AI-generated tips. My bachelor's thesis.",
     },
     description: {
       ro: [
-        "Lucrarea mea de licență: o aplicație mobilă care te ajută să-ți urmărești progresul zi de zi, după motto-ul „Fiecare zi contează”.",
+        "Lucrarea mea de licență: o aplicație mobilă care te ajută să renunți la obiceiurile nocive și să-ți urmărești progresul zi de zi, după motto-ul „Fiecare zi contează”.",
         "Am construit-o cu React Native și Expo, cu datele în Firebase, iar sfaturile personalizate sunt generate cu AI prin Claude API.",
       ],
       en: [
-        "My bachelor's thesis: a mobile app that helps you track your progress day by day, built around the motto “Every day counts”.",
+        "My bachelor's thesis: a mobile app that helps you break harmful habits and track your progress day by day, built around the motto “Every day counts”.",
         "I built it with React Native and Expo, with data stored in Firebase, and personalised tips generated with AI through the Claude API.",
       ],
     },
     features: {
-      ro: ["Aplicație mobilă cu React Native și Expo", "Urmărirea progresului zilnic", "Sfaturi generate cu AI (Claude API)", "Date sincronizate în Firebase"],
-      en: ["Mobile app built with React Native and Expo", "Daily progress tracking", "AI-generated tips (Claude API)", "Data synced with Firebase"],
+      ro: ["Aplicație mobilă cu React Native și Expo", "Renunțarea la obiceiurile nocive, cu progres zilnic", "Sfaturi generate cu AI (Claude API)", "Date sincronizate în Firebase"],
+      en: ["Mobile app built with React Native and Expo", "Breaking harmful habits, with daily progress", "AI-generated tips (Claude API)", "Data synced with Firebase"],
     },
     status: { ro: "Lucrare de licență", en: "Bachelor's thesis" },
     statusTone: "ready",
     tech: ["reactnative", "expo", "firebase", "claude"],
     image: "progres-100",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/progres100" }],
   },
   {
     slug: "viata-de-hibrid",
