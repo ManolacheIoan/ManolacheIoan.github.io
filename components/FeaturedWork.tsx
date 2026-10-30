@@ -12,7 +12,7 @@ export function FeaturedWork({ lang }: { lang: Lang }) {
   return (
     <section id="proiecte" aria-labelledby="work-title" className="container-x py-24 sm:py-32">
       <SectionHead index="01" kicker={t.kicker} title={t.title} id="work-title" />
-      <div className="mt-16 grid gap-24 sm:mt-24 md:gap-36">
+      <div className="mt-14 grid gap-24 sm:mt-20 md:gap-36">
         {featuredProjects.map((p, i) => (
           <Reveal key={p.slug}>
             <ProjectCard project={p} lang={lang} variant="feature" index={i} total={featuredProjects.length} />

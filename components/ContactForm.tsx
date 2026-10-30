@@ -55,7 +55,7 @@ export function ContactForm({ lang }: { lang: Lang }) {
           <label htmlFor="cf-name" className={label}>{t.name}</label>
         </div>
         <div className="relative">
-          <input id="cf-email" name="email" type="email" required autoComplete="email" placeholder="nume@email.ro" className={field} />
+          <input id="cf-email" name="email" type="email" required autoComplete="email" placeholder={t.email} className={field} />
           <label htmlFor="cf-email" className={label}>{t.email}</label>
         </div>
       </div>

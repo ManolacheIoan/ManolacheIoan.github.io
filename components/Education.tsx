@@ -19,7 +19,7 @@ export function Education({ lang }: { lang: Lang }) {
   return (
     <section id="educatie" data-jump="section" aria-labelledby="edu-title" className="container-x py-24 sm:py-32">
       <SectionHead index="03" kicker={t.sections.education.kicker} title={t.sections.education.title} id="edu-title" />
-      <ol ref={ref} className="relative mt-16 grid gap-16 md:ml-[25%] md:gap-20">
+      <ol ref={ref} className="relative mt-14 grid gap-16 sm:mt-20 md:ml-[25%] md:gap-20">
         {/* track + drawn line */}
         <span aria-hidden="true" className="absolute bottom-0 left-[7px] top-2 w-px bg-line" />
         <motion.span

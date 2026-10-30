@@ -10,7 +10,7 @@ export function Manotek({ lang }: { lang: Lang }) {
   return (
     <section id="manotek" aria-labelledby="manotek-title" className="container-x py-24 sm:py-32">
       <SectionHead index="05" kicker={t.kicker} title={t.title} id="manotek-title" />
-      <div className="mt-14 grid gap-12 md:grid-cols-12">
+      <div className="mt-14 grid gap-12 sm:mt-20 md:grid-cols-12">
         <Reveal className="md:col-span-5 md:col-start-4">
           <p className="t-lead text-ink-2">{manotek.lead[lang]}</p>
           {manotek.isLive ? (

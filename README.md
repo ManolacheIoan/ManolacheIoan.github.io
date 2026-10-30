@@ -37,10 +37,10 @@ Cuvintele scrise între `*stele*` apar în italic serif, colorat (de ex. `"Lucru
 - [x] **Facultatea:** `data/education.ts` → `faculty` (de două ori). Verifică și anii (2022–2026, 2026–).
 - [ ] **Materii relevante și lucrarea de licență** (opțional): `courses` și `thesis` în `data/education.ts`.
 - [ ] **Tehnologii de la facultate:** `data/tech.ts` → grupa `university`. Grupa e ascunsă cât timp e goală.
-- [ ] **Poza:** pune `public/me.jpg` (portret 4:5) și scrie `photo: "/me.jpg"` în `data/profile.ts`.
+- [x] **Poza:** pune `public/me.jpg` (portret 4:5) și scrie `photo: "/me.jpg"` în `data/profile.ts`.
 - [ ] **CV:** înlocuiește `public/cv.pdf` (acum e o pagină placeholder).
 - [ ] **Domeniul:** setează `NEXT_PUBLIC_SITE_URL` (în `netlify.toml` sau în setările Netlify/Vercel). Fără el, sitemap-ul și Open Graph folosesc `https://johnmnl.example`.
-- [ ] **Formular (opțional):** creează un formular pe formspree.io și pune ID-ul în `formspreeId`. Fără el, butonul deschide aplicația de email cu mesajul completat.
+- [x] **Formular (opțional):** creează un formular pe formspree.io și pune ID-ul în `formspreeId`. Fără el, butonul deschide aplicația de email cu mesajul completat.
 - [ ] **Manotek.ro:** când domeniul e online, pune `isLive: true` în `data/manotek.ts`. Captura `manotek.png` e făcută din build-ul local.
 - [ ] **Disponibilitate:** textul „Deschis la colaborări” din hero e în `profile.availability` (pune `null` ca să-l ascunzi).
 

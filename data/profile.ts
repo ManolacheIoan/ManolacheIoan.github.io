@@ -21,7 +21,7 @@ export const profile = {
   },
 
   /** Your photo, e.g. "/me.jpg" in /public (portrait, 4:5). Empty = elegant monogram placeholder. */
-  photo: "",
+  photo: "/me.jpg",
   /** CV file in /public. */
   cv: "/cv.pdf",
 
@@ -47,12 +47,12 @@ export const profile = {
     ro: [
       "Sunt Ioan, iar online semnez John Mnl. Am terminat licența în Informatică Aplicată la Universitatea „Dunărea de Jos” din Galați și acum sunt în primul an de master, pe aceeași specializare.",
       "Îmi place să duc un proiect de la o idee pe hârtie până la ceva ce poți deschide pe telefon: interfață, logică, date și publicare. Din același motiv am fondat Manotek, un studio mic prin care fac site-uri și aplicații pentru firme.",
-      "În paralel construiesc proiecte proprii, de la un ghid pentru alegerea unei mașini second-hand la o aplicație de antrenor personal, ca să învăț lucruri pe care nu le-aș întâlni altfel.",
+      "În paralel construiesc proiecte proprii, de la un ghid pentru alegerea unei mașini second-hand la o aplicație de antrenor personal, pentru a învăța lucruri noi.",
     ],
     en: [
       "I'm Ioan, and online I go by John Mnl. I earned my bachelor's degree in Applied Computer Science at “Dunărea de Jos” University of Galați, and I'm now in the first year of my master's in the same field.",
       "I like taking a project from an idea on paper to something you can open on your phone: interface, logic, data and deployment. That's also why I founded Manotek, a small studio where I build websites and apps for businesses.",
-      "Alongside it I build my own projects, from a guide for choosing a used car to a personal-trainer app, to learn things I wouldn't run into otherwise.",
+      "Alongside it I build my own projects, from a guide for choosing a used car to a personal-trainer app, to keep learning new things.",
     ],
   } satisfies LList,
 
@@ -65,7 +65,7 @@ export const profile = {
   ] satisfies { label: L; value: L }[],
 
   /** Contact form. Paste your Formspree form ID (e.g. "xyzabcd") to send messages directly; empty = opens the email app. */
-  formspreeId: "",
+  formspreeId: "xaeebrgl",
 };
 
 /** Public address of the site (no trailing slash). Used for SEO, sitemap and social previews. */

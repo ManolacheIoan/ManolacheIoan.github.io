@@ -29,7 +29,7 @@ export function Contact({ lang }: { lang: Lang }) {
             <Rich text={t.title} />
           </h2>
         </Reveal>
-        <div className="mt-14 grid gap-14 md:grid-cols-12">
+        <div className="mt-14 grid gap-14 sm:mt-20 md:grid-cols-12">
           <Reveal className="md:col-span-4">
             <p className="t-lead text-ink-2">{t.lead}</p>
             <ul className="mt-8 grid gap-1">

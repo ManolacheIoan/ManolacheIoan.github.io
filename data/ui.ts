@@ -29,7 +29,7 @@ const ro = {
   stats: { projects: "proiecte", personal: "personale", demo: "demo", tech: "tehnologii" },
   sections: {
     work: { kicker: "Proiecte selectate", title: "Lucruri pe care *le-am construit*", all: "Toate proiectele" },
-    about: { kicker: "Despre mine", title: "Cod, oameni și *lucruri duse până la capăt*" },
+    about: { kicker: "Despre mine", title: "Omul *din spatele codului*" },
     education: { kicker: "Educație", title: "Unde am *învățat meseria*" },
     stack: {
       kicker: "Tehnologii",
@@ -53,7 +53,7 @@ const ro = {
     name: "Nume",
     email: "Email",
     message: "Mesaj",
-    messagePh: "Salut, Ioan! Aș vrea să vorbim despre…",
+    messagePh: "Scrie mesajul tău aici",
     send: "Trimite mesajul",
     sending: "Se trimite…",
     sent: "Mulțumesc! Mesajul a ajuns. Îți răspund cât pot de repede.",
@@ -123,7 +123,7 @@ const en: Ui = {
   stats: { projects: "projects", personal: "personal", demo: "demo", tech: "technologies" },
   sections: {
     work: { kicker: "Selected work", title: "Things *I've built*", all: "All projects" },
-    about: { kicker: "About me", title: "Code, people and *seeing things through*" },
+    about: { kicker: "About me", title: "The person *behind the code*" },
     education: { kicker: "Education", title: "Where I *learned the craft*" },
     stack: {
       kicker: "Stack",
@@ -147,7 +147,7 @@ const en: Ui = {
     name: "Name",
     email: "Email",
     message: "Message",
-    messagePh: "Hi Ioan! I'd like to talk about…",
+    messagePh: "Write your message here",
     send: "Send message",
     sending: "Sending…",
     sent: "Thank you! Your message arrived. I'll reply as soon as I can.",

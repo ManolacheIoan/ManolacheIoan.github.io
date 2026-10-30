@@ -44,7 +44,7 @@ export function About({ lang }: { lang: Lang }) {
   return (
     <section id="despre" aria-labelledby="about-title" className="container-x py-24 sm:py-32">
       <SectionHead index="02" kicker={t.kicker} title={t.title} id="about-title" />
-      <div className="mt-14 grid gap-12 md:grid-cols-12 md:gap-10">
+      <div className="mt-14 grid gap-12 sm:mt-20 md:grid-cols-12 md:gap-10">
         <Reveal className="md:col-span-4 md:col-start-1">
           <Portrait lang={lang} />
         </Reveal>

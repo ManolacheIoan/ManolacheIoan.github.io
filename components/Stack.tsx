@@ -30,7 +30,7 @@ export function Stack({ lang }: { lang: Lang }) {
     <section id="tehnologii" aria-labelledby="stack-title" className="container-x py-24 sm:py-32">
       <SectionHead index="04" kicker={t.kicker} title={t.title} id="stack-title" aside={<p className="max-w-[46ch] text-ink-2">{t.hint}</p>} />
 
-      <div className="mt-14 grid gap-10 lg:grid-cols-12 lg:gap-12">
+      <div className="mt-14 grid gap-10 sm:mt-20 lg:grid-cols-12 lg:gap-12">
         <div className="grid content-start gap-10 lg:col-span-7">
           {groups.map((g, gi) => (
             <Reveal key={g.id} delay={gi * 0.06}>

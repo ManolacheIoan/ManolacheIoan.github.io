@@ -122,7 +122,7 @@ export function Hero({ lang }: { lang: Lang }) {
           <div className="fade-up md:col-span-5 md:justify-self-end" style={{ "--d": "0.5s" } as CSSProperties}>
             <p className="t-label max-w-[38ch] leading-relaxed text-muted">{profile.role[lang]}</p>
             <div className="mt-5 flex flex-wrap items-center gap-3">
-              <SectionLink lang={lang} id="proiecte" className="btn btn-primary">
+              <SectionLink lang={lang} id="proiecte" toHeading className="btn btn-primary">
                 {t.hero.seeWork} <Arrow />
               </SectionLink>
               <SectionLink lang={lang} id="contact" className="btn btn-ghost">
