@@ -69,7 +69,7 @@ export const profile = {
 };
 
 /** Public address of the site (no trailing slash). Used for SEO, sitemap and social previews. */
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://johnmnl.example").replace(/\/$/, "");
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://manolacheioan.github.io").replace(/\/$/, "");
 
 /** True when a value is still a [placeholder]. */
 export const isPlaceholder = (v: string | null | undefined) => !v || /^\[.*\]$/.test(v.trim());

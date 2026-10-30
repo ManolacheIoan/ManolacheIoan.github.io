@@ -39,13 +39,14 @@ Cuvintele scrise între `*stele*` apar în italic serif, colorat (de ex. `"Lucru
 - [ ] **Tehnologii de la facultate:** `data/tech.ts` → grupa `university`. Grupa e ascunsă cât timp e goală.
 - [x] **Poza:** pune `public/me.jpg` (portret 4:5) și scrie `photo: "/me.jpg"` în `data/profile.ts`.
 - [ ] **CV:** înlocuiește `public/cv.pdf` (acum e o pagină placeholder).
-- [ ] **Domeniul:** setează `NEXT_PUBLIC_SITE_URL` (în `netlify.toml` sau în setările Netlify/Vercel). Fără el, sitemap-ul și Open Graph folosesc `https://johnmnl.example`.
+- [ ] **Domeniu propriu (opțional):** site-ul e publicat la `https://manolacheioan.github.io`. Dacă iei un domeniu, schimbă `NEXT_PUBLIC_SITE_URL` în `.github/workflows/deploy.yml` și adaugă domeniul în Settings → Pages.
 - [x] **Formular (opțional):** creează un formular pe formspree.io și pune ID-ul în `formspreeId`. Fără el, butonul deschide aplicația de email cu mesajul completat.
 - [ ] **Manotek.ro:** când domeniul e online, pune `isLive: true` în `data/manotek.ts`. Captura `manotek.png` e făcută din build-ul local.
 - [ ] **Disponibilitate:** textul „Deschis la colaborări” din hero e în `profile.availability` (pune `null` ca să-l ascunzi).
 
 ## Publicare
 
+- **GitHub Pages (folosit acum):** la fiecare push pe `main`, `.github/workflows/deploy.yml` construiește site-ul și îl publică la https://manolacheioan.github.io.
 - **Netlify:** conectezi repo-ul. `netlify.toml` setează deja build-ul (`npm run build` → `out`) și cache-ul.
 - **Vercel:** importi proiectul. Detectează Next.js și exportul static automat.
 
