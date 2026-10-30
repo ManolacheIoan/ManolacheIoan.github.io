@@ -14,10 +14,10 @@ export const profile = {
   timeZone: "Europe/Bucharest",
 
   /** Leave empty ("") until you have it. The site hides what is missing. */
-  email: "[email@exemplu.ro]",
+  email: "mioan22072003@gmail.com",
   socials: {
     github: "https://github.com/ManolacheIoan",
-    linkedin: "[https://www.linkedin.com/in/...]",
+    linkedin: "https://www.linkedin.com/in/ioan-manolache-469a2a31b/",
   },
 
   /** Your photo, e.g. "/me.jpg" in /public (portrait, 4:5). Empty = elegant monogram placeholder. */

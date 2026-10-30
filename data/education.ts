@@ -28,7 +28,7 @@ export const education: EducationItem[] = [
       ro: "Universitatea „Dunărea de Jos” din Galați",
       en: "“Dunărea de Jos” University of Galați",
     },
-    faculty: { ro: "[Facultatea — de completat]", en: "[Faculty — to fill in]" },
+    faculty: { ro: "Facultatea de Automatică, Calculatoare, Inginerie Electrică și Electronică", en: "Faculty of Automation, Computers, Electrical Engineering and Electronics" },
     note: { ro: "În curs", en: "In progress" },
     courses: { ro: [], en: [] },
   },
@@ -41,7 +41,7 @@ export const education: EducationItem[] = [
       ro: "Universitatea „Dunărea de Jos” din Galați",
       en: "“Dunărea de Jos” University of Galați",
     },
-    faculty: { ro: "[Facultatea — de completat]", en: "[Faculty — to fill in]" },
+    faculty: { ro: "Facultatea de Automatică, Calculatoare, Inginerie Electrică și Electronică", en: "Faculty of Automation, Computers, Electrical Engineering and Electronics" },
     note: { ro: "Absolvit", en: "Graduated" },
     // Example: { ro: ["Structuri de date", "Baze de date"], en: ["Data structures", "Databases"] }
     courses: { ro: [], en: [] },

@@ -31,10 +31,10 @@ Cuvintele scrise între `*stele*` apar în italic serif, colorat (de ex. `"Lucru
 
 ## Ce mai trebuie completat
 
-- [ ] **Email:** `data/profile.ts` → `email` (acum e `[email@exemplu.ro]`).
-- [ ] **LinkedIn:** `data/profile.ts` → `socials.linkedin`. Cât timp e placeholder, e ascuns.
+- [x] **Email:** `data/profile.ts` → `email` (acum e `[email@exemplu.ro]`).
+- [x] **LinkedIn:** `data/profile.ts` → `socials.linkedin`. Cât timp e placeholder, e ascuns.
 - [ ] **GitHub:** verifică dacă `https://github.com/ManolacheIoan` e linkul pe care vrei să-l arăți.
-- [ ] **Facultatea:** `data/education.ts` → `faculty` (de două ori). Verifică și anii (2022–2026, 2026–).
+- [x] **Facultatea:** `data/education.ts` → `faculty` (de două ori). Verifică și anii (2022–2026, 2026–).
 - [ ] **Materii relevante și lucrarea de licență** (opțional): `courses` și `thesis` în `data/education.ts`.
 - [ ] **Tehnologii de la facultate:** `data/tech.ts` → grupa `university`. Grupa e ascunsă cât timp e goală.
 - [ ] **Poza:** pune `public/me.jpg` (portret 4:5) și scrie `photo: "/me.jpg"` în `data/profile.ts`.
