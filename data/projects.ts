@@ -154,6 +154,7 @@ export const projects: Project[] = [
     slug: "viata-de-hibrid",
     name: "Viața de Hibrid",
     kind: "personal",
+    featured: true,
     tagline: {
       ro: "Site personal cu două fețe: Studio pentru proiecte digitale, Arena pentru sport.",
       en: "A two-sided personal site: Studio for digital projects, Arena for sport.",
@@ -383,7 +384,6 @@ export const projects: Project[] = [
     slug: "respiro",
     name: "Respiro",
     kind: "demo",
-    featured: true,
     tagline: {
       ro: "Studio de masaj, cu card cadou tipăribil și ghid de respirație animat.",
       en: "Massage studio, with a printable gift card and an animated breathing guide.",
@@ -465,8 +465,8 @@ export const featuredOrder = [
   "alegemasina",
   "fitplan",
   "busola",
+  "viata-de-hibrid",
   "zambet-mare",
-  "respiro",
 ];
 
 export const featuredProjects = featuredOrder
