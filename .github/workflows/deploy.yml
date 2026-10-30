@@ -24,7 +24,8 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - run: npm ci
+      # npm install instead of npm ci: npm ci rejects the lock file over optional WASM deps on Linux.
+      - run: npm install --no-audit --no-fund
       - run: npm run build
         env:
           # Real address of the site, used for SEO, sitemap and social previews.
