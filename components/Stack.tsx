@@ -92,7 +92,7 @@ export function Stack({ lang }: { lang: Lang }) {
                       <span>
                         <span className="block font-display text-lg font-semibold tracking-[-0.02em]">{techName(tech.id, lang)}</span>
                         <span className="text-sm text-muted">
-                          {tech.workflow ? t.workflow : used.length ? t.usedIn(used.length) : t.none}
+                          {tech.workflow ? t.workflow : used.length ? t.usedIn(used.length) : tech.note?.[lang] ?? t.none}
                         </span>
                       </span>
                     </>

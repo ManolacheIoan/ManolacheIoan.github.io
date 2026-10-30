@@ -1,5 +1,16 @@
 import {
+  siCaddy,
   siClaude,
+  siDocker,
+  siExpo,
+  siFirebase,
+  siGithubactions,
+  siGrafana,
+  siLinux,
+  siPrometheus,
+  siPytest,
+  siSqlalchemy,
+  siVitest,
   siCss,
   siEslint,
   siFastapi,
@@ -35,6 +46,17 @@ const brand: Record<string, string> = {
   git: siGit.path,
   netlify: siNetlify.path,
   eslint: siEslint.path,
+  docker: siDocker.path,
+  githubactions: siGithubactions.path,
+  caddy: siCaddy.path,
+  prometheus: siPrometheus.path,
+  grafana: siGrafana.path,
+  linux: siLinux.path,
+  pytest: siPytest.path,
+  vitest: siVitest.path,
+  sqlalchemy: siSqlalchemy.path,
+  expo: siExpo.path,
+  firebase: siFirebase.path,
 };
 
 // Simple line icons for things that aren't brands.
@@ -58,6 +80,12 @@ const line: Record<string, React.ReactNode> = {
     </>
   ),
   code: <path d="m8 7-5 5 5 5m8-10 5 5-5 5" />,
+  check: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="m8 12.5 2.8 2.8L16 9.8" />
+    </>
+  ),
 };
 
 export function TechIcon({ icon, className = "h-4 w-4" }: { icon: string; className?: string }) {

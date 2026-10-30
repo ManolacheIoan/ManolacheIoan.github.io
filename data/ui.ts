@@ -48,7 +48,7 @@ const ro = {
       lead: "Scrie-mi câteva rânduri despre ce ai în minte. Răspund personal.",
     },
   },
-  education: { courses: "Materii relevante", thesis: "Lucrare de licență" },
+  education: { courses: "Materii relevante", thesis: "Lucrare de licență", internship: "Practică" },
   form: {
     name: "Nume",
     email: "Email",
@@ -142,7 +142,7 @@ const en: Ui = {
       lead: "Send me a few lines about what you have in mind. I reply personally.",
     },
   },
-  education: { courses: "Relevant courses", thesis: "Bachelor's thesis" },
+  education: { courses: "Relevant courses", thesis: "Bachelor's thesis", internship: "Internship" },
   form: {
     name: "Name",
     email: "Email",

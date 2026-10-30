@@ -120,15 +120,17 @@ export function ProjectCard({
     </div>
   );
 
+  // Cards show the first few technologies; the project page lists them all.
+  const CARD_TECH = 6;
+  const cardTech = project.tech.filter((id) => id !== "react" || !project.tech.includes("nextjs"));
   const techList = (
     <ul className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted" aria-label={ui[lang].project.stack}>
-      {project.tech
-        .filter((id) => id !== "react" || !project.tech.includes("nextjs"))
-        .map((id) => (
-          <li key={id} className="font-mono text-[0.78rem]">
-            {techName(id, lang)}
-          </li>
-        ))}
+      {cardTech.slice(0, CARD_TECH).map((id) => (
+        <li key={id} className="font-mono text-[0.78rem]">
+          {techName(id, lang)}
+        </li>
+      ))}
+      {cardTech.length > CARD_TECH ? <li className="font-mono text-[0.78rem]">+{cardTech.length - CARD_TECH}</li> : null}
     </ul>
   );
 

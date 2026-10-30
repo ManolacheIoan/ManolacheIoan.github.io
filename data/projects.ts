@@ -105,7 +105,7 @@ export const projects: Project[] = [
     },
     status: { ro: "Funcțional și testat · încă nepublic", en: "Working and tested · not public yet" },
     statusTone: "ready",
-    tech: [...NEXT_TS, "python", "fastapi", "postgresql", "pwa"],
+    tech: [...NEXT_TS, "python", "fastapi", "rest", "postgresql", "pwa"],
     image: "fitplan",
   },
   {
@@ -154,7 +154,6 @@ export const projects: Project[] = [
     slug: "viata-de-hibrid",
     name: "Viața de Hibrid",
     kind: "personal",
-    featured: true,
     tagline: {
       ro: "Site personal cu două fețe: Studio pentru proiecte digitale, Arena pentru sport.",
       en: "A two-sided personal site: Studio for digital projects, Arena for sport.",
@@ -194,39 +193,47 @@ export const projects: Project[] = [
     slug: "manotek-watch",
     name: "Manotek Watch",
     kind: "personal",
+    featured: true,
     tagline: {
-      ro: "Monitorizare de site-uri: incidente, alerte și rapoarte lunare.",
-      en: "Website monitoring: incidents, alerts and monthly reports.",
+      ro: "Platformă de monitorizare a site-urilor, cu peste 660 de teste automate pe backend.",
+      en: "A website monitoring platform with 660+ automated backend tests.",
     },
     description: {
       ro: [
-        "Un instrument care verifică periodic site-urile, deschide un incident când ceva nu merge și trimite alerte pe email sau Discord.",
-        "Avertizează din timp când expiră certificatele SSL și strânge totul într-un raport lunar.",
+        "Cel mai mare proiect al meu: un serviciu care verifică periodic site-urile, deschide și închide automat incidente și trimite alerte pe Discord, plus avertizări când expiră certificatele SSL.",
+        "În spate rulează un worker care preia sarcinile în siguranță, chiar și în paralel. Securitatea e lucrată: protecție SSRF, webhook-uri criptate, autentificare în doi pași (2FA) și protecție CSRF.",
+        "Am scris peste 660 de teste pentru backend, plus 149 de teste unitare și 154 end-to-end. Am configurat CI/CD, monitorizare cu Prometheus și Grafana, publicare pe HTTPS și un ghid de backup și restaurare.",
       ],
       en: [
-        "A tool that checks websites periodically, opens an incident when something breaks and sends alerts by email or Discord.",
-        "It warns ahead of time when SSL certificates are about to expire and rolls everything into a monthly report.",
+        "My biggest project: a service that checks websites periodically, opens and closes incidents automatically and sends Discord alerts, plus warnings when SSL certificates are about to expire.",
+        "Behind it runs a background worker that picks up jobs safely, even concurrently. Security is built in: SSRF protection, encrypted webhooks, two-factor authentication (2FA) and CSRF protection.",
+        "I wrote 660+ backend tests, plus 149 unit and 154 end-to-end tests. I set up CI/CD, Prometheus and Grafana monitoring, HTTPS deployment and a backup and restore runbook.",
       ],
     },
     features: {
       ro: [
-        "Verificări periodice ale site-urilor",
-        "Incidente deschise și închise automat",
-        "Alerte pe email sau Discord",
-        "Avertizare la expirarea certificatelor SSL",
-        "Rapoarte lunare",
+        "Verificări periodice și incidente deschise/închise automat",
+        "Alerte pe Discord și avertizări de expirare SSL",
+        "Worker cu blocare sigură a sarcinilor în paralel",
+        "Protecție SSRF și CSRF, webhook-uri criptate, 2FA",
+        "660+ teste backend, 149 unitare, 154 end-to-end",
+        "CI/CD, monitorizare Prometheus/Grafana, backup și restaurare",
       ],
       en: [
-        "Periodic website checks",
-        "Incidents opened and closed automatically",
-        "Email or Discord alerts",
-        "SSL certificate expiry warnings",
-        "Monthly reports",
+        "Periodic checks with incidents opened and closed automatically",
+        "Discord alerts and SSL expiry warnings",
+        "Background worker with safe concurrent job locking",
+        "SSRF and CSRF protection, encrypted webhooks, 2FA",
+        "660+ backend tests, 149 unit, 154 end-to-end",
+        "CI/CD, Prometheus/Grafana monitoring, backup and restore",
       ],
     },
     status: { ro: "Funcțional local · încă nepublic", en: "Working locally · not public yet" },
     statusTone: "local",
-    tech: ["python", "fastapi", "postgresql", "nextjs", "react"],
+    tech: [
+      "python", "fastapi", "rest", "postgresql", "sqlalchemy", "nextjs", "react", "typescript",
+      "pytest", "vitest", "playwright", "docker", "githubactions", "caddy", "prometheus", "grafana",
+    ],
     diagram: "watch",
   },
   {
@@ -454,10 +461,10 @@ export const projects: Project[] = [
 
 /** Projects on the home page, in this order. */
 export const featuredOrder = [
+  "manotek-watch",
   "alegemasina",
   "fitplan",
   "busola",
-  "viata-de-hibrid",
   "zambet-mare",
   "respiro",
 ];

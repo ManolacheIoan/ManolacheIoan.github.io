@@ -71,6 +71,14 @@ export function Education({ lang }: { lang: Lang }) {
                   <p className="mt-2 text-ink-2">{e.thesis.summary[lang]}</p>
                 </div>
               ) : null}
+
+              {e.internship ? (
+                <div className="mt-4 rounded-2xl border border-line bg-surface p-5">
+                  <p className="t-label text-muted">{t.education.internship}</p>
+                  <p className="mt-2 font-display text-xl font-medium tracking-[-0.02em]">{e.internship.title[lang]}</p>
+                  <p className="mt-2 text-ink-2">{e.internship.summary[lang]}</p>
+                </div>
+              ) : null}
             </Reveal>
           </li>
         ))}
