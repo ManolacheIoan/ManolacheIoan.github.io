@@ -355,6 +355,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: [...NEXT_TS, "css"],
     image: "temelia",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/materiale-demo" }],
   },
   {
     slug: "zambet-mare",
@@ -463,6 +464,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: [...NEXT_TS, "css"],
     image: "birou-notarial-cervin",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/birou-notarial-cervin" }],
   },
   {
     slug: "clubul-curiosilor",
@@ -488,6 +490,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: [...NEXT_TS, "css"],
     image: "clubul-curiosilor",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/clubul-curiosilor" }],
   },
 ];
 
