@@ -330,6 +330,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: ["html", "css", "javascript"],
     image: "akropolis",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/akropolis" }],
   },
   {
     slug: "temelia",
@@ -412,6 +413,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: [...NEXT_TS, "css"],
     image: "atelierul-suvitelor",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/atelierul-suvitelor" }],
   },
   {
     slug: "respiro",
@@ -437,6 +439,7 @@ export const projects: Project[] = [
     statusTone: "demo",
     tech: [...NEXT_TS, "css"],
     image: "respiro",
+    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/respiro" }],
   },
   {
     slug: "birou-notarial-cervin",
