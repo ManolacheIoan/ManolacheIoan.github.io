@@ -1,60 +1,42 @@
 # John Mnl · Portofoliu
 
-Portofoliul personal al lui Ioan Manolache (John Mnl). Next.js 16 (App Router), TypeScript, Tailwind CSS 4 și Motion. Site complet static, în română (implicit, `/`) și engleză (`/en/`).
+Portofoliul personal al lui Ioan Manolache (John Mnl), Software Engineer din România.
 
-## Pornire
+**Live:** [manolacheioan.github.io](https://manolacheioan.github.io)
 
-```bash
-npm install
-npm run dev          # http://localhost:3000
-npm run dev -- -H 0.0.0.0   # pentru a-l deschide și de pe telefon, din aceeași rețea Wi-Fi
-npm run build        # generează site-ul static în /out
-npm run lint && npm run typecheck
-```
+![Previzualizarea portofoliului](public/og-v2.png)
 
-## Unde editezi conținutul
+## Ce conține
 
-Tot textul stă în `/data`, iar componentele nu trebuie atinse.
+- **Proiecte:** pagină pentru fiecare proiect, cu capturi de ecran, funcții, tehnologii și link spre codul sursă. Filtre după tip (personal sau demo) și după tehnologie.
+- **Despre mine, educație și tehnologii:** tehnologiile sunt interactive. Alegi una și vezi în ce proiecte am folosit-o.
+- **Contact:** formular care trimite mesajele prin Formspree.
+- **Bilingv:** română (implicit, `/`) și engleză (`/en/`).
+- **Temă luminoasă și întunecată**, salvată pentru fiecare vizitator, fără flash la încărcare.
+- **Animații** la scroll și tranziții între pagini, care se opresc pentru cei care au setat „reduced motion”.
 
-| Fișier | Ce conține |
-| --- | --- |
-| `data/profile.ts` | nume, rol, intro din hero, „Despre mine”, email, linkuri, poză, CV, Formspree |
-| `data/education.ts` | licența și masterul, facultatea, materiile, lucrarea de licență |
-| `data/tech.ts` | tehnologiile pe categorii (și grupa „De la facultate”) |
-| `data/projects.ts` | toate proiectele, cele recomandate (`featuredOrder`), stări, tehnologii |
-| `data/manotek.ts` | secțiunea Manotek (`isLive: true` face linkul clickabil) |
-| `data/ui.ts` | textele interfeței (meniu, butoane, titluri de secțiuni), RO + EN |
+## Tehnologii
 
-Cuvintele scrise între `*stele*` apar în italic serif, colorat (de ex. `"Lucruri pe care *le-am construit*"`).
-
-**Capturi de ecran:** pui originalul (1200×750) în `assets/projects/<nume>.jpg`, rulezi `npm run images`, apoi treci `image: "<nume>"` la proiect în `data/projects.ts`.
-
-## Ce mai trebuie completat
-
-- [x] **Email:** `data/profile.ts` → `email` (acum e `[email@exemplu.ro]`).
-- [x] **LinkedIn:** `data/profile.ts` → `socials.linkedin`. Cât timp e placeholder, e ascuns.
-- [ ] **GitHub:** verifică dacă `https://github.com/ManolacheIoan` e linkul pe care vrei să-l arăți.
-- [x] **Facultatea:** `data/education.ts` → `faculty` (de două ori). Verifică și anii (2022–2026, 2026–).
-- [ ] **Materii relevante și lucrarea de licență** (opțional): `courses` și `thesis` în `data/education.ts`.
-- [ ] **Tehnologii de la facultate:** `data/tech.ts` → grupa `university`. Grupa e ascunsă cât timp e goală.
-- [x] **Poza:** pune `public/me.jpg` (portret 4:5) și scrie `photo: "/me.jpg"` în `data/profile.ts`.
-- [x] **CV:** înlocuiește `public/cv.pdf` (acum e o pagină placeholder).
-- [ ] **Domeniu propriu (opțional):** site-ul e publicat la `https://manolacheioan.github.io`. Dacă iei un domeniu, schimbă `NEXT_PUBLIC_SITE_URL` în `.github/workflows/deploy.yml` și adaugă domeniul în Settings → Pages.
-- [x] **Formular (opțional):** creează un formular pe formspree.io și pune ID-ul în `formspreeId`. Fără el, butonul deschide aplicația de email cu mesajul completat.
-- [ ] **Manotek.ro:** când domeniul e online, pune `isLive: true` în `data/manotek.ts`. Captura `manotek.png` e făcută din build-ul local.
-- [ ] **Disponibilitate:** textul „Deschis la colaborări” din hero e în `profile.availability` (pune `null` pentru a-l ascunde).
-
-## Publicare
-
-- **GitHub Pages (folosit acum):** la fiecare push pe `main`, `.github/workflows/deploy.yml` construiește site-ul și îl publică la https://manolacheioan.github.io.
-- **Netlify:** conectezi repo-ul. `netlify.toml` setează deja build-ul (`npm run build` → `out`) și cache-ul.
-- **Vercel:** importi proiectul. Detectează Next.js și exportul static automat.
+Next.js 16 (App Router, export static) · React 19 · TypeScript · Tailwind CSS 4 · Motion
 
 ## Detalii tehnice
 
-- Două layout-uri rădăcină: `app/(ro)` și `app/(en)/en`. Pagina 404 e în `app/global-not-found.tsx`.
-- Tema e salvată în `localStorage`. `components/ThemeScript.tsx` o aplică înainte de prima afișare, deci nu există flash la încărcare.
-- Toate animațiile respectă `prefers-reduced-motion`: CSS-ul le oprește, iar Motion e configurat cu `reducedMotion="user"`.
-- Tranzițiile între pagini folosesc `<ViewTransition>` din React. Captura unui proiect „zboară” din card în pagina proiectului.
-- Paletă: prună-negru `#110c14` și galben-sulf `#e6d35c` (tema întunecată), hârtie liliachie `#f1edf1` și prună `#7a2a69` (tema luminoasă). Fonturi: Bricolage Grotesque, Instrument Serif, Geist și Geist Mono.
-- Lighthouse, la ultima verificare: desktop 98–99 la performanță și 100 la accesibilitate, bune practici și SEO. Pe mobil (4G lent simulat), performanța e ~83 din cauza celor patru fonturi web.
+- Site complet static: `npm run build` generează HTML, CSS și JS în `/out`.
+- Publicare automată pe GitHub Pages prin GitHub Actions la fiecare push pe `main`, cu verificare de lint înainte de build ([`deploy.yml`](.github/workflows/deploy.yml)).
+- SEO: metadate și previzualizări pentru fiecare pagină, versiuni de limbă, sitemap și date structurate (JSON-LD).
+- Conținutul stă separat de componente, în [`/data`](data): profil, proiecte, educație, tehnologii și textele interfeței în ambele limbi.
+- Capturile proiectelor sunt optimizate în WebP, în trei dimensiuni, cu `npm run images`.
+- Lighthouse pe desktop: 98–99 la performanță și 100 la accesibilitate, bune practici și SEO.
+
+## Rulare locală
+
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # site-ul static în /out
+npm run lint && npm run typecheck
+```
+
+## Autor
+
+Ioan Manolache · [LinkedIn](https://www.linkedin.com/in/ioan-manolache-469a2a31b/) · [GitHub](https://github.com/ManolacheIoan)

@@ -43,3 +43,6 @@ next-env.d.ts
 # AI agent instructions written by `next dev` (kept local)
 AGENTS.md
 CLAUDE.md
+
+# Personal notes (kept local)
+NOTES.md
