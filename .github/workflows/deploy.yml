@@ -26,6 +26,8 @@ jobs:
           cache: npm
       # npm install instead of npm ci: npm ci rejects the lock file over optional WASM deps on Linux.
       - run: npm install --no-audit --no-fund
+      # Stops the deploy if the code has lint errors. Type errors are caught by `next build`.
+      - run: npm run lint
       - run: npm run build
         env:
           # Real address of the site, used for SEO, sitemap and social previews.
