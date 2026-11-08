@@ -1,0 +1,25 @@
+# Weekly update checks: Dependabot opens a pull request for each update. After merging,
+# the deploy workflow runs lint and build before publishing, so a broken update is not deployed.
+# Minor and patch updates are grouped to keep the noise low.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Bucharest
+    open-pull-requests-limit: 5
+    groups:
+      minor-and-patch:
+        update-types: [minor, patch]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Bucharest
+    groups:
+      actions:
+        patterns: ["*"]
