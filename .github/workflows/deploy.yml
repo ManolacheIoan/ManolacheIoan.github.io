@@ -1,9 +1,11 @@
-# Builds the static site and publishes it on GitHub Pages at every push to main.
+# Lint and build on every pull request (including Dependabot's), so a bad change shows
+# a red check before merging. On main, a successful build is also published to GitHub Pages.
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -12,7 +14,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -33,11 +35,13 @@ jobs:
           # Real address of the site, used for SEO, sitemap and social previews.
           NEXT_PUBLIC_SITE_URL: https://manolacheioan.github.io
       - uses: actions/upload-pages-artifact@v3
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         with:
           path: out
 
   deploy:
     needs: build
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
