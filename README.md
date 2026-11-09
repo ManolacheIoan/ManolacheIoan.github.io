@@ -26,6 +26,7 @@ Next.js 16 (App Router, export static) · React 19 · TypeScript · Tailwind CSS
 - SEO: metadate și previzualizări pentru fiecare pagină, versiuni de limbă, sitemap și date structurate (JSON-LD).
 - Conținutul stă separat de componente, în [`/data`](data): profil, proiecte, educație, tehnologii și textele interfeței în ambele limbi.
 - Capturile proiectelor sunt optimizate în WebP, în trei dimensiuni, cu `npm run images`.
+- Teste end-to-end cu Playwright, pe telefon și desktop: pagina principală, schimbarea limbii, tema, filtrele de proiecte, linkurile de cod sursă, formularul de contact (fără trimiteri reale) și pagina 404. Plus verificarea automată de accesibilitate cu axe (WCAG 2.2 AA). Rulează la fiecare push, înainte de publicare.
 - Lighthouse pe desktop: 98–99 la performanță și 100 la accesibilitate, bune practici și SEO.
 
 ## Rulare locală
@@ -35,6 +36,7 @@ npm install
 npm run dev     # http://localhost:3000
 npm run build   # site-ul static în /out
 npm run lint && npm run typecheck
+npm run test:e2e   # teste Playwright pe build-ul din /out (rulează întâi npm run build)
 ```
 
 ## Autor
