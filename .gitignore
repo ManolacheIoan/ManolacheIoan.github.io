@@ -46,3 +46,7 @@ CLAUDE.md
 
 # Personal notes (kept local)
 NOTES.md
+
+# Playwright
+/playwright-report/
+/test-results/
