@@ -480,20 +480,25 @@ export const projects: Project[] = [
     description: {
       ro: [
         "Site pentru un centru educațional pentru copii de 4–14 ani. Programele sunt prezentate ca „misiuni”, cu filtre, tabere, personaje desenate și înscriere online.",
+        "Are și un calendar de evenimente (porți deschise, spectacole, începutul taberelor) cu „Adaugă în calendar”, termeni și condiții, imagine de previzualizare la distribuire și iconițe pentru telefon. Testat cu Vitest, Playwright și axe (accesibilitate).",
       ],
       en: [
         "A site for a learning center for kids aged 4–14. Programs are presented as “missions”, with filters, camps, hand-drawn characters and online sign-up.",
+        "It also has an events calendar (open days, shows, camp start dates) with “Add to calendar”, terms and conditions, a link preview image for sharing and home-screen icons. Tested with Vitest, Playwright and axe (accessibility).",
       ],
     },
     features: {
-      ro: ["Programe prezentate ca „misiuni”", "Filtre", "Tabere", "Personaje desenate", "Înscriere online"],
-      en: ["Programs presented as “missions”", "Filters", "Camps", "Hand-drawn characters", "Online sign-up"],
+      ro: ["Programe prezentate ca „misiuni”", "Filtre", "Tabere", "Calendar de evenimente", "Personaje desenate", "Înscriere online"],
+      en: ["Programs presented as “missions”", "Filters", "Camps", "Events calendar", "Hand-drawn characters", "Online sign-up"],
     },
     status: { ro: "Demo", en: "Demo" },
     statusTone: "demo",
     tech: [...NEXT_TS, "css"],
     image: "clubul-curiosilor",
-    links: [{ label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/clubul-curiosilor" }],
+    links: [
+      { label: { ro: "Demo live", en: "Live demo" }, href: "https://manolacheioan.github.io/clubul-curiosilor/" },
+      { label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/clubul-curiosilor" },
+    ],
   },
 ];
 
