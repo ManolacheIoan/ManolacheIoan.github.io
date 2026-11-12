@@ -480,11 +480,11 @@ export const projects: Project[] = [
     description: {
       ro: [
         "Site pentru un centru educațional pentru copii de 4–14 ani. Programele sunt prezentate ca „misiuni”, cu filtre, tabere, personaje desenate și înscriere online.",
-        "Are și un calendar de evenimente (porți deschise, spectacole, începutul taberelor) cu „Adaugă în calendar”, termeni și condiții, imagine de previzualizare la distribuire și iconițe pentru telefon. Testat cu Vitest, Playwright și axe (accesibilitate).",
+        "Are și un calendar de evenimente (porți deschise, spectacole, începutul taberelor) cu „Adaugă în calendar”, o pagină cu încăperile centrului desenate în cod, termeni și condiții, imagine de previzualizare la distribuire și iconițe pentru telefon. Testat cu Vitest, Playwright și axe (accesibilitate).",
       ],
       en: [
         "A site for a learning center for kids aged 4–14. Programs are presented as “missions”, with filters, camps, hand-drawn characters and online sign-up.",
-        "It also has an events calendar (open days, shows, camp start dates) with “Add to calendar”, terms and conditions, a link preview image for sharing and home-screen icons. Tested with Vitest, Playwright and axe (accessibility).",
+        "It also has an events calendar (open days, shows, camp start dates) with “Add to calendar”, a page showing the center's rooms drawn in code, terms and conditions, a link preview image for sharing and home-screen icons. Tested with Vitest, Playwright and axe (accessibility).",
       ],
     },
     features: {
