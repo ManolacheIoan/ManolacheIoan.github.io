@@ -43,7 +43,7 @@ export function ProjectsBrowser({ lang }: { lang: Lang }) {
                   <motion.span layoutId="kind-pill" className="absolute inset-0 rounded-full bg-ink" transition={{ type: "spring", stiffness: 400, damping: 34 }} />
                 ) : null}
                 <span className={`relative ${kind === k.id ? "text-bg" : "text-ink-2"}`}>
-                  {k.label} <span className="font-mono text-xs opacity-60">{k.n}</span>
+                  {k.label} <span className="font-mono text-xs opacity-80">{k.n}</span>
                 </span>
               </button>
             ))}
