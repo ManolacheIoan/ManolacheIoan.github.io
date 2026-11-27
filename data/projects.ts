@@ -454,6 +454,28 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "driveline-auto",
+    name: "DriveLine Auto",
+    kind: "demo",
+    tagline: { ro: "Parc auto cu mașini rulate, cu stoc filtrabil și pagină pentru fiecare mașină.", en: "Used-car dealer, with a filterable stock and a page for every car." },
+    description: {
+      ro: ["Site pentru un parc auto: stoc de 14 mașini cu filtre animate (marcă, preț, an, km, combustibil, cutie, caroserie) și sortare, apoi o pagină generată static pentru fiecare mașină, cu galerie cu swipe și lightbox, specificații, dotări, rată lunară orientativă și programare la test drive. Include buy-back, servicii, pașii de cumpărare și întrebări frecvente."],
+      en: ["A site for a used-car dealer: a 14-car stock with animated filters (make, price, year, mileage, fuel, gearbox, body) and sorting, then a statically generated page for every car, with a swipeable gallery and lightbox, specs, equipment, an indicative monthly payment and test-drive booking. Includes buy-back, services, buying steps and FAQ."],
+    },
+    features: {
+      ro: ["Stoc cu filtre și sortare animate", "Pagină statică pentru fiecare mașină", "Calculator de rată orientativă", "Schema.org AutoDealer și Car"],
+      en: ["Stock with animated filters and sorting", "Static page for every car", "Indicative monthly payment calculator", "Schema.org AutoDealer and Car"],
+    },
+    status: { ro: "Demo", en: "Demo" },
+    statusTone: "demo",
+    tech: [...NEXT_TS, "tailwind", "motion", "seo", "a11y"],
+    image: "driveline-auto",
+    links: [
+      { label: { ro: "Demo live", en: "Live demo" }, href: "https://manolacheioan.github.io/parc-auto-demo/" },
+      { label: { ro: "Cod sursă", en: "Source code" }, href: "https://github.com/ManolacheIoan/parc-auto-demo" },
+    ],
+  },
+  {
     slug: "volan-academy",
     name: "Volan Academy",
     kind: "demo",
